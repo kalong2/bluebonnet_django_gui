@@ -1,0 +1,107 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+ margin: 0px;
+}
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  background-color: #F1F1F1;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+        float: left;
+        display: block;
+        color: Black;
+        text-align: center;
+        padding: 18px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        font-family: arial;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background: lightgray;
+  color: black;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  color: black;
+  text-align: center;
+  padding: 18px 16px;
+  background-color: inherit;
+  font-family: arial;
+  margin: 0;
+}
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #F1F1F1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: lightgray;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+.topright {
+        position: absolute;
+        top: 2px;
+        right: 4px;
+        padding:0;
+}
+h1 {
+        text-align: center;
+        margin:0;
+        padding:0;
+        margin-top: 100px;
+}
+h2 {
+        text-align: center;
+        margin:0;
+        padding:0;
+        margin-top: 0;
+}
+
+</style>
+  <meta charset="utf-8">
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
+

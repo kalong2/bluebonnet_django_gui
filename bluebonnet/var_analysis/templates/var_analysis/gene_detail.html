@@ -1,0 +1,133 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- INSERT FORM -->
+<style>
+.outputBox {
+border: 2px solid black;
+font: Consolas;
+width: 45%;
+height: 200px;
+margin: 0px;
+overflow-y: scroll;
+z-index:-10;
+}
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin-left:0;
+  margin-right:auto;
+}
+
+
+td, th {
+
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+
+}
+
+tr:nth-child(even) {
+
+  background-color: #dddddd;
+
+}
+
+
+</style>
+{% load static %}<script src="{% static "js/jquery.js" %}"></script>
+{% load static %} <script src="{% static "js/jquery.fancyTable/src/fancyTable.js" %}"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function() {
+                $("#resultsTable").fancyTable({
+                sortColumn:3,
+                        sortOrder: 'descending',
+                /* Setting pagination or enabling */
+                   pagination: true,
+                   /* Rows per page kept for display */
+                   perPage:10,
+                   globalSearch:true
+                   });
+
+            });
+        </script>
+
+<div style="margin-left:10px;margin-top:100px">
+{% load static %}
+	<h1>{{ gene.gene_id }}</h1>
+	</br>
+	<h2><u>General Information</u></h2>
+	<table class="table table-striped" style="width:99%;display:inline-table;margin-right:10px">
+		<thead>
+		<tr>
+			<th>Condition</th>
+			<th>Chromosome</th>
+			<th>Positions</th>
+			<th>RefSeq ID</th>
+			<th>Transcript</th>
+			<th>Protein</th>
+			<th>Additional Resources</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr>
+			{% if gene.condition_site %}
+				<td><a href={{ gene.condition_site }} target="_blank" rel="noreferrer noopener">{{ gene.condition }}</td>
+			{% else %}
+				<td>{{ gene.condition }}</td>
+			{% endif %}
+	<td>{{ gene.chrom }}</td>
+	<td>{{ gene.start_end }}</td>
+	<td><a href="https://www.ncbi.nlm.nih.gov/nuccore/{{ gene.locus }}" target="_blank" rel="noreferrer noopener">{{ gene.locus }}</td>
+	<td>{{ gene.transcript }}</td>
+	<td><a href="https://www.ncbi.nlm.nih.gov/protein/{{ gene.np_id }}" target="_blank" rel="noreferrer noopener">{{ gene.np_id }}</td>
+	<td><a href={{ gene.gnomad_link }} target="_blank" rel="noreferrer noopener">Gnomad</a></br>
+	<a href={{ gene.ncbi_gene_link }} target="_blank" rel="noreferrer noopener">NCBI Gene</td>
+			</tr></tbody></table>
+
+			</br></br><h2><u>Variant Queries</u></h2>
+<table id="resultsTable" class="table table-striped" style="width:99%;display:inline-table;margin-right:10px">
+                <thead>
+                <tr>
+                        <th>View Results</th>
+                        <th>Query ID</th>
+                        <th>Gene</th>
+                        <th>Variant</th>
+                        <th>Date Updated</th>
+                        <th>User Updated</th>
+                        <!--<th>Latest Worksheet</th>
+                        <th>Latest Log</th>-->
+                </tr>
+                </thead>
+                <tbody>
+
+{% for query in gene.query_set.all %}
+                        {% load static %}
+
+                        <tr><td width="10" style="text-align:center"><a href="/var_analysis/results/{{query.latest_evidence}}"><img src="{% static "bluebonnet/media/go_link.png" %}" width="20" height="20"</a></td>
+                                <td>{{ query.id }}</td>
+                                <td><a href="/var_analysis/results/{{query.gene}}">{{ query.gene }}</td>
+                                <td>{{ query.var }}</td>
+                                <td>{{ query.date_updated }}</td>
+                                <td>{{ query.user_updated }}</td>
+                        </tr>
+
+                {% endfor %}
+                </tbody>
+
+
+        </table>
+
+
+</div>
+
+{% endblock %}
+

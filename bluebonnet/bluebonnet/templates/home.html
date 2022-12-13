@@ -1,0 +1,162 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+{% block content %}
+<style>
+.column {
+float: left;
+width: 50%;
+}
+		table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+td, th {
+
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+
+}
+
+
+
+tr:nth-child(even) {
+
+  background-color: #dddddd;
+
+}
+
+</style>
+{% load static %}<script src="{% static "js/jquery.js" %}"></script>
+{% load static %} <script src="{% static "js/jquery.fancyTable/src/fancyTable.js" %}"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function() {
+                $("#resultsTable").fancyTable({
+                sortColumn:4,
+                        sortOrder: 'descending',
+                /* Setting pagination or enabling */
+                   pagination: true,
+                   /* Rows per page kept for display */
+                   perPage:10,
+                   globalSearch:true
+                   });
+
+            });
+        </script>
+	
+	<script type="text/javascript">
+
+            $(document).ready(function() {
+                $("#reviewsTable").fancyTable({
+                sortColumn:3,
+                        sortOrder: 'ascending',
+                /* Setting pagination or enabling */
+                   pagination: true,
+                   /* Rows per page kept for display */
+                   perPage:10,
+                   globalSearch:true
+                   });
+
+            });
+        </script>
+
+<div style=margin-top:100px;margin-left:10px>
+	<h1>Welcome to BlueBonnet, {{ user.first_name }}</h1>
+
+	</br>
+	<div>
+		{% if user.reviewer.reviewer_1 %}
+		<h2 style=margin-left:10%>Ready for Reviewer 1</h2>
+			<table id="reviewsTable" class="table table-striped" style="width:80%;">
+                		<thead>
+                		<tr>
+                        		<th>Results</th>
+                        		<th>Gene</th>
+                        		<th>Variant</th>
+					<th>Date</th>
+                		</tr>
+                		</thead>
+                		<tbody>
+					{% for q in Query %}
+					{% if not q.latest_evidence.reviewer_1_patho %}
+                        			<tr><td width="10" style="text-align:center"><a href="/var_analysis/results/{{q.latest_evidence}}"><img src="{% static "bluebonnet/media/go_link.png" %}" width="20" height="20"</a></td>
+                                		<td><a href="/var_analysis/results/{{q.gene}}">{{ q.gene }}</td>
+                                		<td>{{ q.var }}</td>
+						<td>{{ q.latest_evidence.date_ran }}</td>
+                        			</tr>
+                			{% endif %}
+					{% endfor %}
+				</tbody>
+					{% endif %}
+        		</table>
+
+		{% if user.reviewer.reviewer_2 %}
+                        <h2 style=margin-left:10%>Ready for Reviewer 2</h2>
+                        <table id="reviewsTable" class="table table-striped" style="width:80%;">
+                                <thead>
+                                <tr>
+                                        <th>Results</th>
+                                        <th>Gene</th>
+                                        <th>Variant</th>
+                                        <th>Date</th>
+					<th>Reviewer 1 Pathogenicity</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        {% for q in Query %}
+                                        {% if q.latest_evidence.reviewer_1_patho and not q.latest_evidence.reviewer_2_patho %}
+                                                <tr><td width="10" style="text-align:center"><a href="/var_analysis/results/{{q.latest_evidence}}"><img src="{% static "bluebonnet/media/go_link.png" %}" width="20" height="20"</a></td>
+                                                <td><a href="/var_analysis/results/{{q.gene}}">{{ q.gene }}</td>
+                                                <td>{{ q.var }}</td>
+                                                <td>{{ q.latest_evidence.date_ran }}</td>
+                                                <td>{{ q.latest_evidence.reviewer_1_patho }}</td>
+                                                </tr>
+                                        {% endif %}
+                                        {% endfor %}
+                                </tbody>
+                                        {% endif %}
+                        </table>
+		
+		{% if user.reviewer.reviewer_3 %}
+                        <h2 style=margin-left:10%>Ready for Reviewer 3</h2>
+                        <table id="reviewsTable" class="table table-striped" style="width:80%;">
+                                <thead>
+                                <tr>
+                                        <th>Results</th>
+                                        <th>Gene</th>
+                                        <th>Variant</th>
+					<th>Date</th>
+					<th>Reviewer 1 Pathogenicity</th>
+                                        <th>Reviewer 2 Pathogenicity</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                        {% for q in Query %}
+                                        {% if q.latest_evidence.reviewer_1_patho and q.latest_evidence.reviewer_2_patho and not q.latest_evidence.reviewer_3_patho%}
+                                                <tr><td width="10" style="text-align:center"><a href="/var_analysis/results/{{q.latest_evidence}}"><img src="{% static "bluebonnet/media/go_link.png" %}" width="20" height="20"</a></td>
+                                                <td><a href="/var_analysis/results/{{q.gene}}">{{ q.gene }}</td>
+                                                <td>{{ q.var }}</td>
+						<td>{{ q.latest_evidence.date_ran }}</td>
+                                                <td>{{ q.latest_evidence.reviewer_1_patho }}</td>
+                                                <td>{{ q.latest_evidence.reviewer_2_patho }}</td>
+                                                </tr>
+                                        {% endif %}
+                                        {% endfor %}
+                                </tbody>
+                                        {% endif %}
+                        </table>
+
+
+	</div>
+
+	
+	</div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,116 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- INSERT FORM -->
+<style>
+.myBox {
+border: 5px solid black;
+font: 24px/36px sans-serif;
+width: 45%;
+float: right;
+margin: 0px;
+z-index:-10;
+overflow: hidden;
+}
+
+.myForm {
+border: 5px solid black;
+font: 24px/36px sans-serif;
+width: 45%;
+height: 500px;
+float: left;
+margin: 0px;
+overflow: scroll;
+z-index:-10;
+}
+
+.bigBox {
+width: 90vw;
+height: 500px;
+margin-left: 100px;
+margin-right: 100px;
+margin-top: 100px;
+padding:0;
+z-index:-10;
+
+}
+
+</style>
+<div class=bigBox>
+<div class="myForm">
+	<h1 style="margin-left:0px;text-align:left;margin-top:5px;padding:0px;margin-bottom:0px">Variant Query Form</h1>
+	<form action="/var_analysis/" method="post" style=text-align:left;margin-left:5px;margin-top:0px>
+    		{% csrf_token %}
+		
+		<input id='add_more' type='button' value="Add Variant" style="margin-top:0px;margin-bottom:0px" class="btn">
+		<input type="submit" value="Submit Variants for Analysis" class="btn">
+		<table id="empty_form" style="margin:0px;padding:0px;display:none;">
+                                <div class='var-form' style=margin:0px;padding:0px;font-size:16px;>
+					<tr>
+					{% for field in formset.empty_form %}
+                    				<td>{{ field }}</td>
+                			{% endfor %}
+					</tr>
+                                </div>
+		</table>
+		{% if messages %}
+<ul class=messages style="position:relative;margin-top:0px;width:80%;font-size:16px">
+        {% for message in messages %}
+        <li{%if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+		
+		{{ formset.management_form }}
+		{% load widget_tweaks %}
+		<table id='var-form-list' style=width:80%;float:left;margin-left:10px;auto;margin-top:5px;padding:10px;font-size:20px>
+	    		{% for form in formset %}
+				<tr>
+				{% for field in form %}
+				<th>{{ field.label_tag }}</th>
+                		{% endfor %}
+				</tr>
+	    			<div class='var-form' style=margin:0px;padding:0px;font-size:16px>
+					{% for field in form %}
+                    				<td>{{ field }}</td>
+                			{% endfor %}
+				</div>
+	    		{% endfor %}
+		</table>
+		<!-- <input id='add_more' type='button' value="Add Variant">
+		<div id="empty_form" style="display:none"> {{ formset.empty_form.as_table }}<br></div>
+		<input type="submit" value="Submit Variants for Analysis" class="btn btn-primary"> -->
+	</form>
+	<br>
+</div>
+
+
+{% load static %}<script src="{% static "js/jquery.js" %}"></script>
+<script>
+$('#add_more').click(function() {
+        var form_idx = $('#id_form-TOTAL_FORMS').val();
+        $('#var-form-list').append($('#empty_form').html().replace(/__prefix__/g, form_idx));
+	$('#id_form-TOTAL_FORMS').val(parseInt(form_idx) + 1);
+
+    });
+</script>
+
+
+
+<!-- GUIDE -->
+<div class="myBox">
+	<h1 style=margin-left:5px;text-align:left;margin-top:5px>Guide</h1>	
+	<p style=text-align:left;margin-left:5px;>- This page is used to submit variants for analysis
+	<br>- Click "Add Variant" for additional query forms
+	<br>- Genes must be chosen in the drop down menu
+	<br>- Variants must be entered in hgvsc format
+	<br>- Example: <br>Gene: ABCD1<br>Var: c.-59C>T</p>
+</div>
+</div>
+{% endblock %}
+

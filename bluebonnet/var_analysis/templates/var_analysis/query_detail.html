@@ -1,0 +1,102 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- INSERT FORM -->
+<style>
+.outputBox {
+border: 2px solid black;
+font: Consolas;
+width: 45%;
+height: 200px;
+margin: 0px;
+overflow-y: scroll;
+z-index:-10;
+}
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin-left:0;
+  margin-right:auto;
+}
+
+
+td, th {
+
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+
+}
+
+tr:nth-child(even) {
+
+  background-color: #dddddd;
+
+}
+
+
+</style>
+<div style="margin-left:10px">	
+<h1 style="margin-top:100px">{{ query.query_str }}</h1>
+</br>
+
+{% for evi in query.evidence_set.all %}
+        {% if forloop.last %}
+	<p><b><u>Overview:</b></u><table id="resultsTable" class="table table-striped" style="width:99%;display:inline-table;margin-right:10px">
+                <thead>
+                <tr>
+                        <th>Date Updated</th>
+                        <th>User Updated</th>
+                        <th>Protein Change</th>
+			<th>RefSeq ID</th>
+                        <th>Chromosome</th>
+			<th>Positions</th>
+                </tr>
+                </thead>
+                <tbody>
+			<tr><td>
+                                <pre>{{ evi.date }}</pre></td>
+                                <td><pre>{{ evi.user }}</pre></td>
+                                <td><pre>{{ evi.hgvsp }}</pre></td>
+                                <td><pre>{{ evi.locus }}</pre></td>
+				<td><pre>{{ evi.chrom }}</pre></td>
+				<td><pre>{{ evi.start_end }}</pre></td>
+                </tr></tbody></table></p>
+		<p><b><u>Gnomad: </b></u><div class=outputBox><pre>{{ evi.gnomad }}</pre></div></p>
+	<p><b><u>ExAC: </b></u><div class=outputBox><pre>{{ evi.exac }}</pre></div></p>
+		<p><b><u>dbSNP: </b></u><div class=outputBox><pre>{{ evi.dbsnp }}</pre></div></p>
+		<p><b><u>ClinVar: </b></u><div class=outputBox>{{ evi.clinvar|linebreaks }}</div></p>
+		<p><b><u>Splice Sites: </b></u><div class=outputBox><pre>{{ evi.splice_sites }}</pre></div></p>
+		<p><b><u>UCSC Conservation Scores: </b></u><div class=outputBox><pre>{{ evi.ucsc }}</pre></div></p>
+		<p><b><u>Computational Evidence: </b></u><table id="resultsTable" class="table table-striped" style="width:45%;display:inline-table">
+                <thead>
+                <tr>
+                        <th>PolyPhen2</th>
+                        <th>CADD</th>
+                        <th>SIFT</th>
+                        <th>PROVEAN</th>
+                </tr>
+                </thead>
+                <tbody>
+		<tr>
+				<td><pre>{{ evi.polyphen2 }}</pre></td>
+				<td><pre>{{ evi.cadd }}</pre></td>
+				<td><pre>{{ evi.sift }}</pre></td>
+				<td><pre>{{ evi.provean }}</pre></td>
+		</tr></tbody></table></p>
+		<p><b><u>Active Sites: </b></u><div class=outputBox><pre>{{ evi.active_sites }}</pre></div></p>
+		<p><b><u>Additional Information: </b></u><div class=outputBox><pre>{{ evi.additional_info }}</pre></div></p>
+	{% endif %}
+{% endfor %}
+
+</div>
+
+
+{% endblock %}
+

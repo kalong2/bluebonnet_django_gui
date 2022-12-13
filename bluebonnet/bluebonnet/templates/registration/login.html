@@ -1,0 +1,127 @@
+<!-- templates/registration/login.html -->
+
+{% block title %}Login{% endblock %}
+
+
+<style>
+form {
+	text-align: center;
+	margin-top: 100px;
+	font-style: arial;
+}
+body{
+ margin: 0px;
+}
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  background-color: #F1F1F1;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+        float: left;
+        display: block;
+        color: Black;
+        text-align: center;
+        padding: 18px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        font-family: arial;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background: lightgray;
+  color: black;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  color: black;
+  text-align: center;
+  padding: 18px 16px;
+  background-color: inherit;
+  font-family: arial;
+  margin: 0;
+}
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #F1F1F1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: lightgray;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+
+</style>
+{% if user.is_authenticated %}
+
+<div class="navbar">
+        <a href="/">Home</a>
+        <div class="dropdown">
+                <button class="dropbtn">Variants
+                        <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                        <a href="/var_analysis">Run Analysis</a>
+                        <a href="/var_analysis/results">Retrieve Results</a>
+                </div>
+        </div>
+        <!-- <a href="#profile">WGS</a> -->
+        <div class="dropdown">
+                <button class="dropbtn">{{user.username}}
+                        <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                        <a href="#">Settings</a>
+                        <a href="{% url 'logout' %}">Log Out</a>
+                </div>
+        </div>
+</div>
+
+{% else %}
+
+<body>
+	<div class="navbar">
+		<strong><a href="/">Home</a></strong>
+		{% load static %} <img src="{% static "bluebonnet/media/DSHS_left.png" %}" alt="home" width="272.5" height="57.5" style="float:right" />
+	</div>
+
+	<strong><form method="post">
+  		{% csrf_token %}
+  		{{ form.as_p }}
+  		<button type="submit">Log In</button>
+	</form></strong>
+</body>
+
+{% endif %}

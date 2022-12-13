@@ -1,0 +1,94 @@
+<html>
+<head>
+<style>
+body{
+ margin: 0px;
+}
+.topright {
+	position: absolute;
+	top: 2px;
+	right: 4px;
+	padding:0;
+}
+h1 {
+	text-align: center;
+	margin:0;
+  	padding:0;
+	margin-top: 100px;
+}
+h2 {
+	text-align: center;
+        margin:0;
+        padding:0;
+	margin-top: 0;
+}
+.button1 {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	background-color: RoyalBlue; /* Green */
+	border: none;
+	color: white;
+	padding: 8px 16px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	font-family: verdana;
+}
+.button2 {
+	background-color: white;
+        color: black;
+        border: 2px solid RoyalBlue;
+}
+.button2:hover {
+  	background-color: RoyalBlue;
+  	color: white;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #F1F1F1;
+  position: fixed;
+  top: 0;
+  width: 200%;
+}
+
+.navbar a {
+	float: left;
+	display: block;
+	color: Black;
+	text-align: center;
+	padding: 18px 16px;
+	text-decoration: none;
+ 	font-size: 20px;
+	font-family: arial;
+}
+
+.navbar a:hover {
+  background: lightgray;
+  color: black;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+
+</style>
+</head>
+<body>
+<div class="navbar">
+	<strong><a href="/accounts/login">Login</a></strong>
+</div>
+
+<p>
+	{% load static %} <img src="{% static "bluebonnet/media/DSHS_left.png" %}" alt="home" width="272.5" height="57.5"class=topright />
+</p>
+
+<h1 style="font-family:Brush Script MT;font-size:80px;color:RoyalBlue"> BlueBonnet </h1>
+<h2 style="font-family:verdana;font-size:15px"> A Newborn Screening Database </h2>
+<!--<button class="button1 button2">Login</button>-->
+</body>
+</html>

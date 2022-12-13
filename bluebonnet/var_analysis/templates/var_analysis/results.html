@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<style>
+table {
+  margin-top: 75px;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+td, th {
+
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+
+}
+
+
+
+tr:nth-child(even) {
+
+  background-color: #dddddd;
+
+}
+</style>
+
+{% load static %}<script src="{% static "js/jquery.js" %}"></script>
+{% load static %} <script src="{% static "js/jquery.fancyTable/src/fancyTable.js" %}"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function() {
+                $("#resultsTable").fancyTable({
+		sortColumn:4,
+			sortOrder: 'descending',
+		/* Setting pagination or enabling */
+                   pagination: true,
+                   /* Rows per page kept for display */
+                   perPage:10,
+                   globalSearch:true
+                   });
+
+            });
+        </script>
+
+	<script type="text/javascript">
+
+            $(document).ready(function() {
+                $("#reviewTable").fancyTable({
+                sortColumn:3,
+                        sortOrder: 'descending',
+                /* Setting pagination or enabling */
+                   pagination: true,
+                   /* Rows per page kept for display */
+                   perPage:10,
+                   globalSearch:true
+                   });
+
+            });
+        </script>
+
+
+
+<br><br>
+<div>
+	 <table id="resultsTable" class="table table-striped" style="width:80%">
+		<thead>
+		<tr>
+			<th>View Results</th>
+			<th>Query ID</th>
+			<th>Gene</th>
+			<th>Variant</th>
+			<th>Date Updated</th>
+			<th>User Updated</th>
+			<th>Reviewer 1 Pathogenicity</th>
+			<th>Reviewer 2 Pathogenicity</th>
+			<th>Reviewer 3 Pathogenicity</th>
+			<!--<th>Latest Worksheet</th>
+			<th>Latest Log</th>-->
+		</tr>
+		</thead>
+		<tbody>
+
+{% for query in querys %}
+                        {% load static %}
+
+			<tr><td width="10" style="text-align:center"><a href="/var_analysis/results/{{query.latest_evidence}}"><img src="{% static "bluebonnet/media/go_link.png" %}" width="20" height="20"</a></td>
+				<td>{{ query.id }}</td>
+				<td><a href="/var_analysis/results/{{query.gene}}">{{ query.gene }}</td>
+				<td>{{ query.var }}</td>
+				<td>{{ query.date_updated }}</td>
+				<td>{{ query.user_updated }}</td>
+				<td>{{ query.latest_evidence.reviewer_1_patho }}</td>
+				<td>{{ query.latest_evidence.reviewer_2_patho }}</td>
+				<td>{{ query.latest_evidence.reviewer_3_patho }}</td>
+				<!--<td> 
+                                <a href="{% static 'outputs/latest/' %}{{query.gene}}_{{query.id}}_latest.txt" download>Download Worksheet</a>
+                                </td>
+                                <td>
+                                <a href="{% static 'outputs/latest/' %}{{query.gene}}_{{query.id}}_latest.log" download>Download Log</a>
+				</td> -->
+
+                        </tr>
+
+                {% endfor %}
+		</tbody>
+	
+	
+	</table>
+</div>
+{% endblock %}
+
+
