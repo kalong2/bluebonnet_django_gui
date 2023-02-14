@@ -201,9 +201,9 @@ max-width: 80%
                 <b><u>Computational Evidence: </b></u><table id="resultsTable" class="table table-striped" style="width:100%;display:inline-table">
 			<tr><th>UCSC Conservation Scores</th><td><pre>{{ evidence.ucsc }}</pre></td></tr>
 			<tr><th>PolyPhen2</th><td><pre>{{ evidence.polyphen2 }}</pre></td></tr>
-			<tr><th>CADD</th><td><pre>{{ evidence.cadd }}</pre></td>
-			<tr><th>SIFT</th><td><pre>{{ evidence.sift }}</pre></td>
-			<tr><th>PROVEAN</th><td><pre>{{ evidence.provean }}</pre></td>
+			<tr><th>CADD (cutoff: 20)</th><td><pre>{{ evidence.cadd }}</pre></td>
+			<tr><th>SIFT (cutoff: 0.05)</th><td><pre>{{ evidence.sift }}</pre></td>
+			<tr><th>PROVEAN (cutoff: -2.5)</th><td><pre>{{ evidence.provean }}</pre></td>
                 </table>
 
 {% load widget_tweaks %}

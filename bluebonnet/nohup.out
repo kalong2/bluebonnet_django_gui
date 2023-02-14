@@ -1,0 +1,3472 @@
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 20, 2023 - 09:32:43
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[20/Jan/2023 09:32:54] "GET / HTTP/1.1" 200 2212
+[20/Jan/2023 09:32:55] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[20/Jan/2023 09:32:55] "GET /favicon.ico HTTP/1.1" 404 2684
+[20/Jan/2023 09:32:56] "GET /accounts/login/ HTTP/1.1" 200 2125
+[20/Jan/2023 09:33:05] "POST /accounts/login/ HTTP/1.1" 302 0
+[20/Jan/2023 09:33:05] "GET / HTTP/1.1" 200 4545
+[20/Jan/2023 09:33:05] "GET /static/js/jquery.js HTTP/1.1" 304 0
+[20/Jan/2023 09:33:06] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 304 0
+[20/Jan/2023 09:33:10] "GET / HTTP/1.1" 200 4545
+[20/Jan/2023 09:33:12] "GET / HTTP/1.1" 200 4545
+[20/Jan/2023 09:33:13] "GET /var_analysis/results HTTP/1.1" 200 13758
+[20/Jan/2023 09:33:14] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 304 0
+[20/Jan/2023 10:14:05] "GET /var_analysis/results HTTP/1.1" 200 13758
+[20/Jan/2023 10:14:06] "GET /var_analysis/ HTTP/1.1" 200 7233
+[20/Jan/2023 10:14:39] "GET /var_analysis/ HTTP/1.1" 200 7233
+/home/klong/bb_django/bluebonnet/var_analysis/models.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 20, 2023 - 10:17:31
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[20/Jan/2023 10:18:09] "GET /var_analysis/ HTTP/1.1" 200 7233
+[20/Jan/2023 10:18:12] "POST /var_analysis/ HTTP/1.1" 200 7233
+[20/Jan/2023 10:18:14] "POST /var_analysis/ HTTP/1.1" 200 7233
+ABCD1_13_jleavitt_2023-01-20
+echo 'ABCD1 bleeeee' >|/work/NBS/inputs/ABCD1_13_jleavitt_2023-01-20.txt
+/work/NBS//outputs/2023-01-20/ABCD1_13_jleavitt_2023-01-20
+warning: commands will be executed using /bin/sh
+job 889 at Fri Jan 20 10:18:00 2023
+ABCD1:bleeeee
+Internal Server Error: /var_analysis/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: var_analysis_query.gene_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/klong/bb_django/bluebonnet/var_analysis/views.py", line 62, in run
+    obj.save()
+  File "/home/klong/bb_django/bluebonnet/var_analysis/models.py", line 38, in save
+    return super(Query,self).save(*args,**kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/base.py", line 740, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/base.py", line 778, in save_base
+    force_update, using, update_fields,
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/base.py", line 881, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/base.py", line 921, in _do_insert
+    using=using, raw=raw,
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/sql/compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: var_analysis_query.gene_id
+[20/Jan/2023 10:18:27] "POST /var_analysis/ HTTP/1.1" 500 153357
+ABCD1_13_jleavitt_2023-01-20
+echo 'ABCD1 bleeeee' >|/work/NBS/inputs/ABCD1_13_jleavitt_2023-01-20.txt
+/work/NBS//outputs/2023-01-20/ABCD1_13_jleavitt_2023-01-20
+warning: commands will be executed using /bin/sh
+job 890 at Fri Jan 20 10:18:00 2023
+ABCD1:bleeeee
+Updating record...
+HBB_14_jleavitt_2023-01-20
+echo 'HBB eeeee' >|/work/NBS/inputs/HBB_14_jleavitt_2023-01-20.txt
+/work/NBS//outputs/2023-01-20/HBB_14_jleavitt_2023-01-20
+warning: commands will be executed using /bin/sh
+job 891 at Fri Jan 20 10:18:00 2023
+HBB:eeeee
+[20/Jan/2023 10:18:39] "POST /var_analysis/ HTTP/1.1" 302 0
+[20/Jan/2023 10:18:39] "GET /var_analysis HTTP/1.1" 301 0
+[20/Jan/2023 10:18:39] "GET /var_analysis/ HTTP/1.1" 200 7451
+[20/Jan/2023 10:18:41] "GET /var_analysis/results HTTP/1.1" 200 15250
+/home/klong/bb_django/bluebonnet/var_analysis/models.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 20, 2023 - 10:20:00
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 20, 2023 - 10:43:41
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[20/Jan/2023 10:43:43] "GET /var_analysis/ HTTP/1.1" 200 7233
+[20/Jan/2023 10:43:45] "POST /var_analysis/ HTTP/1.1" 200 7233
+ABCD1_15_jleavitt_2023-01-20
+echo 'ABCD1 eeeee' >|/work/NBS/inputs/ABCD1_15_jleavitt_2023-01-20.txt
+/work/NBS//outputs/2023-01-20/ABCD1_15_jleavitt_2023-01-20
+warning: commands will be executed using /bin/sh
+job 892 at Fri Jan 20 10:43:00 2023
+ABCD1:eeeee
+ACADVL_16_jleavitt_2023-01-20
+echo 'ACADVL xxxxx' >|/work/NBS/inputs/ACADVL_16_jleavitt_2023-01-20.txt
+/work/NBS//outputs/2023-01-20/ACADVL_16_jleavitt_2023-01-20
+warning: commands will be executed using /bin/sh
+job 893 at Fri Jan 20 10:43:00 2023
+ACADVL:xxxxx
+[20/Jan/2023 10:43:55] "POST /var_analysis/ HTTP/1.1" 302 0
+[20/Jan/2023 10:43:56] "GET /var_analysis HTTP/1.1" 301 0
+[20/Jan/2023 10:43:56] "GET /var_analysis/ HTTP/1.1" 200 7451
+[20/Jan/2023 10:44:01] "POST /var_analysis/ HTTP/1.1" 200 7233
+ACADVL_17_jleavitt_2023-01-20
+echo 'ACADVL eeee' >|/work/NBS/inputs/ACADVL_17_jleavitt_2023-01-20.txt
+/work/NBS//outputs/2023-01-20/ACADVL_17_jleavitt_2023-01-20
+warning: commands will be executed using /bin/sh
+job 894 at Fri Jan 20 10:44:00 2023
+ACADVL:eeee
+Internal Server Error: /var_analysis/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.IntegrityError: NOT NULL constraint failed: var_analysis_query.gene_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/klong/bb_django/bluebonnet/var_analysis/views.py", line 62, in run
+    obj.save()
+  File "/home/klong/bb_django/bluebonnet/var_analysis/models.py", line 38, in save
+    return super(Query,self).save(*args,**kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/base.py", line 740, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/base.py", line 778, in save_base
+    force_update, using, update_fields,
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/base.py", line 881, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/base.py", line 921, in _do_insert
+    using=using, raw=raw,
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/sql/compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.IntegrityError: NOT NULL constraint failed: var_analysis_query.gene_id
+[20/Jan/2023 10:44:09] "POST /var_analysis/ HTTP/1.1" 500 153465
+[20/Jan/2023 10:44:15] "GET /var_analysis/results HTTP/1.1" 200 17504
+[20/Jan/2023 10:46:48] "GET /var_analysis/ HTTP/1.1" 200 7233
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 20, 2023 - 10:49:58
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+Internal Server Error: /var_analysis/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/klong/bb_django/bluebonnet/var_analysis/views.py", line 75, in run
+    return render(request, 'var_analysis/run.html', {'formset':formset})
+  File "/usr/local/lib/python3.7/dist-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/defaulttags.py", line 315, in render
+    return nodelist.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/defaulttags.py", line 166, in render
+    values = self.sequence.resolve(context, ignore_failures=True)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/usr/local/lib/python3.7/dist-packages/django/forms/formsets.py", line 96, in __getitem__
+    return self.forms[index]
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/dist-packages/django/forms/formsets.py", line 157, in forms
+    for i in range(self.total_form_count())
+  File "/usr/local/lib/python3.7/dist-packages/django/forms/formsets.py", line 157, in <listcomp>
+    for i in range(self.total_form_count())
+  File "/usr/local/lib/python3.7/dist-packages/django/forms/formsets.py", line 193, in _construct_form
+    form = self.form(**defaults)
+  File "/home/klong/bb_django/bluebonnet/var_analysis/forms.py", line 10, in __init__
+    gene.widget.attrs["required"] = "required"
+NameError: name 'gene' is not defined
+[20/Jan/2023 10:50:03] "GET /var_analysis/ HTTP/1.1" 500 195984
+Internal Server Error: /var_analysis/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/klong/bb_django/bluebonnet/var_analysis/views.py", line 75, in run
+    return render(request, 'var_analysis/run.html', {'formset':formset})
+  File "/usr/local/lib/python3.7/dist-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/defaulttags.py", line 315, in render
+    return nodelist.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/defaulttags.py", line 166, in render
+    values = self.sequence.resolve(context, ignore_failures=True)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/usr/local/lib/python3.7/dist-packages/django/forms/formsets.py", line 96, in __getitem__
+    return self.forms[index]
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/dist-packages/django/forms/formsets.py", line 157, in forms
+    for i in range(self.total_form_count())
+  File "/usr/local/lib/python3.7/dist-packages/django/forms/formsets.py", line 157, in <listcomp>
+    for i in range(self.total_form_count())
+  File "/usr/local/lib/python3.7/dist-packages/django/forms/formsets.py", line 193, in _construct_form
+    form = self.form(**defaults)
+  File "/home/klong/bb_django/bluebonnet/var_analysis/forms.py", line 10, in __init__
+    gene.widget.attrs["required"] = "required"
+NameError: name 'gene' is not defined
+[20/Jan/2023 10:57:00] "GET /var_analysis/ HTTP/1.1" 500 195991
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/management/commands/runserver.py", line 118, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/management/base.py", line 423, in check
+    databases=databases,
+  File "/usr/local/lib/python3.7/dist-packages/django/core/checks/registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/checks/urls.py", line 40, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/checks/urls.py", line 57, in _load_all_namespaces
+    url_patterns = getattr(resolver, 'url_patterns', [])
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/resolvers.py", line 602, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/resolvers.py", line 595, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/klong/bb_django/bluebonnet/bluebonnet/urls.py", line 30, in <module>
+    path('var_analysis/', include('var_analysis.urls')),
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/klong/bb_django/bluebonnet/var_analysis/urls.py", line 4, in <module>
+    from . import views
+  File "/home/klong/bb_django/bluebonnet/var_analysis/views.py", line 15, in <module>
+    from .forms import QueryForm, EvidenceForm
+  File "/home/klong/bb_django/bluebonnet/var_analysis/forms.py", line 5, in <module>
+    class QueryForm(forms.ModelForm):
+  File "/home/klong/bb_django/bluebonnet/var_analysis/forms.py", line 11, in QueryForm
+    class Meta:
+  File "/home/klong/bb_django/bluebonnet/var_analysis/forms.py", line 15, in Meta
+    gene.widget.attrs["required"] = "required"
+NameError: name 'gene' is not defined
+
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/management/commands/runserver.py", line 118, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/management/base.py", line 423, in check
+    databases=databases,
+  File "/usr/local/lib/python3.7/dist-packages/django/core/checks/registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/checks/urls.py", line 40, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/checks/urls.py", line 57, in _load_all_namespaces
+    url_patterns = getattr(resolver, 'url_patterns', [])
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/resolvers.py", line 602, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/resolvers.py", line 595, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/klong/bb_django/bluebonnet/bluebonnet/urls.py", line 30, in <module>
+    path('var_analysis/', include('var_analysis.urls')),
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/klong/bb_django/bluebonnet/var_analysis/urls.py", line 4, in <module>
+    from . import views
+  File "/home/klong/bb_django/bluebonnet/var_analysis/views.py", line 15, in <module>
+    from .forms import QueryForm, EvidenceForm
+  File "/home/klong/bb_django/bluebonnet/var_analysis/forms.py", line 5, in <module>
+    class QueryForm(forms.ModelForm):
+  File "/home/klong/bb_django/bluebonnet/var_analysis/forms.py", line 11, in QueryForm
+    class Meta:
+  File "/home/klong/bb_django/bluebonnet/var_analysis/forms.py", line 15, in Meta
+    gene.widget.attrs["required"] = "required"
+NameError: name 'gene' is not defined
+
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/management/commands/runserver.py", line 118, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/management/base.py", line 423, in check
+    databases=databases,
+  File "/usr/local/lib/python3.7/dist-packages/django/core/checks/registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/checks/urls.py", line 40, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/checks/urls.py", line 57, in _load_all_namespaces
+    url_patterns = getattr(resolver, 'url_patterns', [])
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/resolvers.py", line 602, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/resolvers.py", line 595, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/klong/bb_django/bluebonnet/bluebonnet/urls.py", line 30, in <module>
+    path('var_analysis/', include('var_analysis.urls')),
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/klong/bb_django/bluebonnet/var_analysis/urls.py", line 4, in <module>
+    from . import views
+  File "/home/klong/bb_django/bluebonnet/var_analysis/views.py", line 15, in <module>
+    from .forms import QueryForm, EvidenceForm
+  File "/home/klong/bb_django/bluebonnet/var_analysis/forms.py", line 5, in <module>
+    class QueryForm(forms.ModelForm):
+  File "/usr/local/lib/python3.7/dist-packages/django/forms/models.py", line 253, in __new__
+    "needs updating." % name
+django.core.exceptions.ImproperlyConfigured: Creating a ModelForm without either the 'fields' attribute or the 'exclude' attribute is prohibited; form QueryForm needs updating.
+
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 13:23:35
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 13:23:38] "GET / HTTP/1.1" 200 5039
+[27/Jan/2023 13:23:45] "GET /password_change/ HTTP/1.1" 200 4106
+[27/Jan/2023 13:23:48] "GET /var_analysis/ HTTP/1.1" 200 7421
+[27/Jan/2023 13:23:50] "GET /var_analysis/results HTTP/1.1" 200 4764
+[27/Jan/2023 13:23:56] "GET / HTTP/1.1" 200 5039
+[27/Jan/2023 13:25:21] "GET /admin/auth/user/ HTTP/1.1" 200 11901
+[27/Jan/2023 13:25:21] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+/home/klong/bb_django/bluebonnet/bluebonnet/settings.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 13:27:29
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 13:27:40] "GET / HTTP/1.1" 200 5039
+[27/Jan/2023 13:27:41] "GET /var_analysis/ HTTP/1.1" 200 7421
+[27/Jan/2023 13:27:44] "GET / HTTP/1.1" 200 5039
+[27/Jan/2023 13:28:31] "GET /var_analysis/ HTTP/1.1" 200 7421
+[27/Jan/2023 13:28:49] "GET / HTTP/1.1" 200 5039
+[27/Jan/2023 13:28:52] "GET /var_analysis/results HTTP/1.1" 200 4764
+[27/Jan/2023 13:28:53] "GET /var_analysis/ HTTP/1.1" 200 7421
+[27/Jan/2023 13:28:56] "GET /var_analysis/results HTTP/1.1" 200 4764
+[27/Jan/2023 13:28:58] "GET /var_analysis/ HTTP/1.1" 200 7421
+[27/Jan/2023 13:30:58] "GET /admin/var_analysis/evidence/ HTTP/1.1" 200 5933
+[27/Jan/2023 13:30:59] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[27/Jan/2023 13:30:59] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[27/Jan/2023 13:30:59] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[27/Jan/2023 13:31:00] "GET /admin/auth/group/ HTTP/1.1" 200 6228
+[27/Jan/2023 13:31:01] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[27/Jan/2023 13:31:01] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[27/Jan/2023 13:31:01] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[27/Jan/2023 13:31:25] "GET / HTTP/1.1" 200 5039
+[27/Jan/2023 13:31:27] "GET /var_analysis/results HTTP/1.1" 200 4764
+[27/Jan/2023 13:31:30] "GET /password_change/ HTTP/1.1" 200 4106
+[27/Jan/2023 13:31:31] "GET /var_analysis/ HTTP/1.1" 200 7421
+[27/Jan/2023 13:31:32] "GET /var_analysis/results HTTP/1.1" 200 4764
+[27/Jan/2023 13:31:34] "GET / HTTP/1.1" 200 5039
+[27/Jan/2023 13:31:35] "GET /var_analysis/results HTTP/1.1" 200 4764
+[27/Jan/2023 13:31:38] "GET /var_analysis/ HTTP/1.1" 200 7421
+[27/Jan/2023 13:34:29] "GET /var_analysis/ HTTP/1.1" 200 7421
+[27/Jan/2023 13:34:30] "GET /var_analysis/results HTTP/1.1" 200 4764
+[27/Jan/2023 13:34:32] "GET /var_analysis/ HTTP/1.1" 200 7421
+[27/Jan/2023 13:34:35] "GET / HTTP/1.1" 200 5039
+[27/Jan/2023 13:34:39] "GET /var_analysis/results HTTP/1.1" 200 4764
+[27/Jan/2023 13:34:40] "GET /var_analysis/ HTTP/1.1" 200 7421
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 13:37:48
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 13:37:54] "GET / HTTP/1.1" 200 5039
+[27/Jan/2023 13:37:55] "GET /var_analysis/results HTTP/1.1" 200 4764
+[27/Jan/2023 13:37:57] "GET /var_analysis/ HTTP/1.1" 200 7421
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 13:46:48
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 13:46:52] "GET /var_analysis/ HTTP/1.1" 200 7421
+[27/Jan/2023 13:47:01] "GET /var_analysis/ HTTP/1.1" 200 7421
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 13:47:16
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 13:50:47] "GET /var_analysis/ HTTP/1.1" 200 7421
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 14:00:29
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 14:00:31] "GET / HTTP/1.1" 200 5039
+[27/Jan/2023 14:00:32] "GET /var_analysis/ HTTP/1.1" 200 7421
+[27/Jan/2023 14:00:45] "GET / HTTP/1.1" 200 5039
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/management/commands/runserver.py", line 118, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/management/base.py", line 423, in check
+    databases=databases,
+  File "/usr/local/lib/python3.7/dist-packages/django/core/checks/registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/checks/urls.py", line 40, in check_url_namespaces_unique
+    all_namespaces = _load_all_namespaces(resolver)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/checks/urls.py", line 57, in _load_all_namespaces
+    url_patterns = getattr(resolver, 'url_patterns', [])
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/resolvers.py", line 602, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/resolvers.py", line 595, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/klong/bb_django/bluebonnet/bluebonnet/urls.py", line 30, in <module>
+    path('var_analysis/', include('var_analysis.urls')),
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/klong/bb_django/bluebonnet/var_analysis/urls.py", line 4, in <module>
+    from . import views
+  File "/home/klong/bb_django/bluebonnet/var_analysis/views.py", line 15, in <module>
+    from .forms import QueryForm, EvidenceForm
+  File "/home/klong/bb_django/bluebonnet/var_analysis/forms.py", line 13, in <module>
+    class QueryForm(ModelForm):
+NameError: name 'ModelForm' is not defined
+
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 14:13:00
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 14:13:04] "GET /var_analysis/results HTTP/1.1" 200 4764
+[27/Jan/2023 14:13:05] "GET /var_analysis/ HTTP/1.1" 200 7301
+ABCD1_22_klong_2023-01-27
+echo 'ABCD1 c.-59C>T' >|/work/NBS/inputs/ABCD1_22_klong_2023-01-27.txt
+/work/NBS//outputs/2023-01-27/ABCD1_22_klong_2023-01-27
+warning: commands will be executed using /bin/sh
+job 900 at Fri Jan 27 14:13:00 2023
+ABCD1:c.-59C>T
+[27/Jan/2023 14:13:14] "POST /var_analysis/ HTTP/1.1" 302 0
+[27/Jan/2023 14:13:15] "GET /var_analysis HTTP/1.1" 301 0
+[27/Jan/2023 14:13:15] "GET /var_analysis/ HTTP/1.1" 200 7519
+[27/Jan/2023 14:13:24] "GET /var_analysis/results HTTP/1.1" 200 5516
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 14:21:13
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 14:21:18] "GET /var_analysis/results/ABCD1 HTTP/1.1" 200 6406
+[27/Jan/2023 14:21:21] "GET / HTTP/1.1" 200 5459
+[27/Jan/2023 14:21:22] "GET /var_analysis/results/87 HTTP/1.1" 200 4948
+[27/Jan/2023 14:21:27] "GET /var_analysis/results HTTP/1.1" 200 5516
+[27/Jan/2023 14:22:37] "GET /admin/var_analysis/query/ HTTP/1.1" 200 7066
+[27/Jan/2023 14:22:38] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[27/Jan/2023 14:22:41] "POST /admin/var_analysis/query/ HTTP/1.1" 200 6146
+[27/Jan/2023 14:22:43] "POST /admin/var_analysis/query/ HTTP/1.1" 302 0
+[27/Jan/2023 14:22:43] "GET /admin/var_analysis/query/ HTTP/1.1" 200 6039
+[27/Jan/2023 14:22:43] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[27/Jan/2023 14:22:45] "GET / HTTP/1.1" 200 5039
+[27/Jan/2023 14:22:47] "GET /var_analysis/ HTTP/1.1" 200 7421
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 14:24:00
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 14:24:02] "GET /var_analysis/results HTTP/1.1" 200 4764
+[27/Jan/2023 14:24:35] "GET /var_analysis/ HTTP/1.1" 200 7421
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 14:32:25
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/management/commands/runserver.py", line 118, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/management/base.py", line 423, in check
+    databases=databases,
+  File "/usr/local/lib/python3.7/dist-packages/django/core/checks/registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/resolvers.py", line 416, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/resolvers.py", line 602, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/resolvers.py", line 595, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/klong/bb_django/bluebonnet/bluebonnet/urls.py", line 30, in <module>
+    path('var_analysis/', include('var_analysis.urls')),
+  File "/usr/local/lib/python3.7/dist-packages/django/urls/conf.py", line 34, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/klong/bb_django/bluebonnet/var_analysis/urls.py", line 4, in <module>
+    from . import views
+  File "/home/klong/bb_django/bluebonnet/var_analysis/views.py", line 15, in <module>
+    from .forms import QueryForm, EvidenceForm
+  File "/home/klong/bb_django/bluebonnet/var_analysis/forms.py", line 13, in <module>
+    class QueryForm(forms.ModelForm):
+  File "/home/klong/bb_django/bluebonnet/var_analysis/forms.py", line 14, in QueryForm
+    gene.field.widget.attrs["required"] = "required"
+NameError: name 'gene' is not defined
+
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 14:40:28
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 14:42:36
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 14:42:38] "GET /var_analysis/results HTTP/1.1" 200 4764
+[27/Jan/2023 14:42:39] "GET /var_analysis/ HTTP/1.1" 200 7301
+ABCD1_23_klong_2023-01-27
+echo 'ABCD1 c.-59C>T' >|/work/NBS/inputs/ABCD1_23_klong_2023-01-27.txt
+/work/NBS//outputs/2023-01-27/ABCD1_23_klong_2023-01-27
+warning: commands will be executed using /bin/sh
+job 901 at Fri Jan 27 14:42:00 2023
+ABCD1:c.-59C>T
+[27/Jan/2023 14:42:52] "POST /var_analysis/ HTTP/1.1" 302 0
+[27/Jan/2023 14:42:52] "GET /var_analysis HTTP/1.1" 301 0
+[27/Jan/2023 14:42:53] "GET /var_analysis/ HTTP/1.1" 200 7519
+[27/Jan/2023 14:42:56] "GET /var_analysis/ HTTP/1.1" 200 7301
+[27/Jan/2023 14:42:57] "GET /var_analysis/results HTTP/1.1" 200 5516
+[27/Jan/2023 14:42:59] "GET /var_analysis/results/ABCD1 HTTP/1.1" 200 6406
+[27/Jan/2023 14:43:02] "GET /var_analysis/results HTTP/1.1" 200 5516
+[27/Jan/2023 14:44:48] "GET /var_analysis/results HTTP/1.1" 200 5516
+[27/Jan/2023 14:44:50] "GET / HTTP/1.1" 200 5459
+[27/Jan/2023 14:44:51] "GET /var_analysis/ HTTP/1.1" 200 7301
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 14:45:33
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 14:45:35] "GET /var_analysis/results HTTP/1.1" 200 5516
+[27/Jan/2023 14:45:37] "GET /var_analysis/ HTTP/1.1" 200 7421
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 14:45:57
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 14:46:01] "GET / HTTP/1.1" 200 5459
+Internal Server Error: /var_analysis/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/usr/local/lib/python3.7/dist-packages/django/forms/formsets.py", line 96, in __getitem__
+    return self.forms[index]
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.7/dist-packages/django/forms/formsets.py", line 157, in forms
+    for i in range(self.total_form_count())
+  File "/usr/local/lib/python3.7/dist-packages/django/forms/formsets.py", line 157, in <listcomp>
+    for i in range(self.total_form_count())
+  File "/usr/local/lib/python3.7/dist-packages/django/forms/formsets.py", line 193, in _construct_form
+    form = self.form(**defaults)
+TypeError: __init__() should return None, not 'QueryForm'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/klong/bb_django/bluebonnet/var_analysis/views.py", line 63, in run
+    return render(request, 'var_analysis/run.html', {'formset':formset})
+  File "/usr/local/lib/python3.7/dist-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/defaulttags.py", line 315, in render
+    return nodelist.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/defaulttags.py", line 166, in render
+    values = self.sequence.resolve(context, ignore_failures=True)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 671, in resolve
+    obj = self.var.resolve(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 796, in resolve
+    value = self._resolve_lookup(context)
+  File "/usr/local/lib/python3.7/dist-packages/django/template/base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+  File "/usr/local/lib/python3.7/dist-packages/django/forms/formsets.py", line 214, in empty_form
+    **self.get_form_kwargs(None)
+TypeError: __init__() should return None, not 'QueryForm'
+[27/Jan/2023 14:46:04] "GET /var_analysis/ HTTP/1.1" 500 200777
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 14:46:30
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 14:46:36] "GET /var_analysis/results HTTP/1.1" 200 5516
+[27/Jan/2023 14:46:38] "GET /var_analysis/ HTTP/1.1" 200 7421
+[27/Jan/2023 15:37:53] "GET /var_analysis/results HTTP/1.1" 200 5516
+[27/Jan/2023 15:37:56] "GET /var_analysis/results/88 HTTP/1.1" 200 17719
+[27/Jan/2023 15:37:59] "GET /var_analysis/ HTTP/1.1" 200 7421
+[27/Jan/2023 15:38:00] "GET / HTTP/1.1" 200 5459
+[27/Jan/2023 15:38:04] "GET /var_analysis/ HTTP/1.1" 200 7421
+[27/Jan/2023 15:51:30] "GET / HTTP/1.1" 200 5459
+[27/Jan/2023 15:51:32] "GET /var_analysis/results HTTP/1.1" 200 5516
+[27/Jan/2023 15:51:37] "GET /var_analysis/results HTTP/1.1" 200 5516
+[27/Jan/2023 15:51:41] "GET /var_analysis/results HTTP/1.1" 200 5516
+[27/Jan/2023 15:51:43] "GET /var_analysis/results/88 HTTP/1.1" 200 17719
+[27/Jan/2023 15:51:45] "GET /var_analysis/ HTTP/1.1" 200 7421
+/home/klong/bb_django/bluebonnet/var_analysis/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 16:04:38
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 16:04:44] "GET /var_analysis/ HTTP/1.1" 200 7421
+/home/klong/bb_django/bluebonnet/var_analysis/models.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/management/commands/runserver.py", line 110, in inner_run
+    autoreload.raise_last_exception()
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/autoreload.py", line 87, in raise_last_exception
+    raise _exception[1]
+  File "/usr/local/lib/python3.7/dist-packages/django/core/management/__init__.py", line 375, in execute
+    autoreload.check_errors(django.setup)()
+  File "/usr/local/lib/python3.7/dist-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/usr/local/lib/python3.7/dist-packages/django/apps/registry.py", line 114, in populate
+    app_config.import_models()
+  File "/usr/local/lib/python3.7/dist-packages/django/apps/config.py", line 301, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 724, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 860, in get_code
+  File "<frozen importlib._bootstrap_external>", line 791, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/klong/bb_django/bluebonnet/var_analysis/models.py", line 17
+    query_str = models.CharField(max_length=50, default='', editable = False, null=True, blank=True))
+                                                                                                    ^
+SyntaxError: invalid syntax
+
+/home/klong/bb_django/bluebonnet/var_analysis/models.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 16:31:48
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 16:31:57] "GET / HTTP/1.1" 200 5459
+[27/Jan/2023 16:31:59] "GET /var_analysis/results HTTP/1.1" 200 5516
+[27/Jan/2023 16:32:01] "GET /var_analysis/ HTTP/1.1" 200 7421
+[27/Jan/2023 16:33:45] "GET / HTTP/1.1" 200 5459
+[27/Jan/2023 16:33:48] "GET /var_analysis/ HTTP/1.1" 200 7421
+/home/klong/bb_django/bluebonnet/var_analysis/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 16:34:54
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 16:34:56] "GET / HTTP/1.1" 200 5459
+[27/Jan/2023 16:34:57] "GET /var_analysis/ HTTP/1.1" 200 7301
+ABCD1_24_klong_2023-01-27
+echo 'ABCD1 c.-59C>T' >|/work/NBS/inputs/ABCD1_24_klong_2023-01-27.txt
+/work/NBS//outputs/2023-01-27/ABCD1_24_klong_2023-01-27
+warning: commands will be executed using /bin/sh
+job 902 at Fri Jan 27 16:35:00 2023
+ABCD1:c.-59C>T
+[27/Jan/2023 16:35:06] "POST /var_analysis/ HTTP/1.1" 302 0
+[27/Jan/2023 16:35:07] "GET /var_analysis HTTP/1.1" 301 0
+[27/Jan/2023 16:35:07] "GET /var_analysis/ HTTP/1.1" 200 7519
+[27/Jan/2023 16:35:26] "GET / HTTP/1.1" 200 5871
+/home/klong/bb_django/bluebonnet/var_analysis/models.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 16:35:50
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[27/Jan/2023 16:36:04] "GET /admin/var_analysis/query/ HTTP/1.1" 200 7291
+[27/Jan/2023 16:36:04] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[27/Jan/2023 16:41:29] "GET / HTTP/1.1" 200 5871
+[27/Jan/2023 16:41:31] "GET /var_analysis/results HTTP/1.1" 200 6270
+Not Found: /var_analysis/results/None
+[27/Jan/2023 16:41:34] "GET /var_analysis/results/None HTTP/1.1" 404 3419
+[27/Jan/2023 16:41:47] "POST /admin/var_analysis/query/ HTTP/1.1" 200 6377
+[27/Jan/2023 16:41:50] "POST /admin/var_analysis/query/ HTTP/1.1" 302 0
+[27/Jan/2023 16:41:50] "GET /admin/var_analysis/query/ HTTP/1.1" 200 6040
+[27/Jan/2023 16:41:50] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[27/Jan/2023 16:41:52] "GET /admin/var_analysis/query/ HTTP/1.1" 200 5904
+[27/Jan/2023 16:41:52] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[27/Jan/2023 16:41:54] "GET / HTTP/1.1" 200 5039
+[27/Jan/2023 16:41:56] "GET /var_analysis/results HTTP/1.1" 200 4764
+[27/Jan/2023 16:41:58] "GET /var_analysis/ HTTP/1.1" 200 7301
+/home/klong/bb_django/bluebonnet/var_analysis/models.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 27, 2023 - 16:42:20
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+ABCD1_25_klong_2023-01-27
+echo 'ABCD1 c.-59C>T' >|/work/NBS/inputs/ABCD1_25_klong_2023-01-27.txt
+/work/NBS//outputs/2023-01-27/ABCD1_25_klong_2023-01-27
+warning: commands will be executed using /bin/sh
+job 903 at Fri Jan 27 16:42:00 2023
+ABCD1:c.-59C>T
+Traceback (most recent call last):
+  File "/home/klong/bb_django/bluebonnet/start_query_tmp.py", line 23, in <module>
+    query_str = Query.objects.get(query_str = name),
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/django/db/models/query.py", line 437, in get
+    self.model._meta.object_name
+var_analysis.models.DoesNotExist: Query matching query does not exist.
+Internal Server Error: /var_analysis/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/dist-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/klong/bb_django/bluebonnet/var_analysis/views.py", line 56, in run
+    obj.analysis()
+  File "/home/klong/bb_django/bluebonnet/var_analysis/models.py", line 55, in analysis
+    subprocess.run(['/work/NBS/runNBS.sh',input_file, str(self.date_updated), str(self.user_updated)], check=True, text=True)
+  File "/usr/lib/python3.7/subprocess.py", line 512, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/work/NBS/runNBS.sh', '/work/NBS/inputs/ABCD1_25_klong_2023-01-27.txt', '2023-01-27', 'klong']' returned non-zero exit status 1.
+[27/Jan/2023 16:42:32] "POST /var_analysis/ HTTP/1.1" 500 76205
+[27/Jan/2023 16:43:29] "GET / HTTP/1.1" 200 5451
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 30, 2023 - 08:09:28
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[30/Jan/2023 08:09:33] "GET / HTTP/1.1" 200 5458
+[30/Jan/2023 08:09:33] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[30/Jan/2023 08:09:33] "GET /favicon.ico HTTP/1.1" 404 2824
+[30/Jan/2023 08:09:41] "GET / HTTP/1.1" 200 5458
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 08:09:42] "GET /var_analysis/ HTTP/1.1" 200 7404
+[30/Jan/2023 08:10:21] "GET / HTTP/1.1" 200 5458
+/home/klong/bb_django/bluebonnet/bluebonnet/settings.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 30, 2023 - 08:16:34
+Django version 3.2.15, using settings 'bluebonnet.settings'
+Starting development server at http://100.92.1.73:8000/
+Quit the server with CONTROL-C.
+[30/Jan/2023 08:23:33] "GET / HTTP/1.1" 200 2212
+[30/Jan/2023 08:23:33] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:23:33] "GET /favicon.ico HTTP/1.1" 404 179
+[30/Jan/2023 08:23:36] "GET /accounts/login/ HTTP/1.1" 200 2125
+[30/Jan/2023 08:23:36] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:24:08] "POST /accounts/login/ HTTP/1.1" 200 2278
+[30/Jan/2023 08:24:08] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:24:34] "POST /accounts/login/ HTTP/1.1" 302 0
+[30/Jan/2023 08:24:34] "GET / HTTP/1.1" 200 5451
+[30/Jan/2023 08:24:34] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:24:35] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 08:24:35] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 08:24:45] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 08:24:45] "GET /var_analysis/ HTTP/1.1" 200 7407
+[30/Jan/2023 08:24:46] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:24:46] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="">---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL" selected>ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" value="c.308A&gt;G" maxlength="25" id="id_form-0-var">
+/work/NBS//outputs/2023-01-30/ACADVL_5_jleavitt_2023-01-30
+warning: commands will be executed using /bin/sh
+job 915 at Mon Jan 30 08:25:00 2023
+ACADVL:c.308A>G
+[30/Jan/2023 08:25:50] "POST /var_analysis/ HTTP/1.1" 302 0
+[30/Jan/2023 08:25:51] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 08:25:51] "GET /var_analysis/ HTTP/1.1" 200 7625
+[30/Jan/2023 08:25:51] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:25:51] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 08:25:57] "POST /var_analysis/ HTTP/1.1" 200 7407
+[30/Jan/2023 08:25:58] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:25:58] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 08:26:19] "GET /var_analysis/ HTTP/1.1" 200 7407
+[30/Jan/2023 08:26:19] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:26:19] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 08:26:26] "POST /var_analysis/ HTTP/1.1" 200 7407
+[30/Jan/2023 08:26:26] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:26:26] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="">---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL" selected>ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" value="c.308A&gt;G" maxlength="25" id="id_form-0-var">
+/work/NBS//outputs/2023-01-30/ACADVL_5_jleavitt_2023-01-30
+warning: commands will be executed using /bin/sh
+job 916 at Mon Jan 30 08:26:00 2023
+ACADVL:c.308A>G
+Updating record...
+[30/Jan/2023 08:26:39] "POST /var_analysis/ HTTP/1.1" 302 0
+[30/Jan/2023 08:26:39] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 08:26:39] "GET /var_analysis/ HTTP/1.1" 200 7625
+[30/Jan/2023 08:26:39] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:26:39] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 08:26:55] "GET /var_analysis/results HTTP/1.1" 200 6270
+[30/Jan/2023 08:26:55] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:26:55] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 08:26:55] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 08:26:55] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 08:27:01] "GET /var_analysis/ HTTP/1.1" 200 7407
+[30/Jan/2023 08:27:01] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:27:01] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="">---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL" selected>ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 08:27:17] "POST /var_analysis/ HTTP/1.1" 200 7407
+[30/Jan/2023 08:27:18] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:27:18] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="">---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL" selected>ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" value="c.1269+25G&gt;A" maxlength="25" id="id_form-0-var">
+/work/NBS//outputs/2023-01-30/ACADVL_6_jleavitt_2023-01-30
+warning: commands will be executed using /bin/sh
+job 917 at Mon Jan 30 08:27:00 2023
+ACADVL:c.1269+25G>A
+[30/Jan/2023 08:27:35] "POST /var_analysis/ HTTP/1.1" 302 0
+[30/Jan/2023 08:27:35] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 08:27:35] "GET /var_analysis/ HTTP/1.1" 200 7625
+[30/Jan/2023 08:27:35] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:27:35] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="">---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL" selected>ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" value="c.965T&gt;C" maxlength="25" id="id_form-0-var">
+/work/NBS//outputs/2023-01-30/ACADVL_7_jleavitt_2023-01-30
+warning: commands will be executed using /bin/sh
+job 918 at Mon Jan 30 08:27:00 2023
+ACADVL:c.965T>C
+[30/Jan/2023 08:27:49] "POST /var_analysis/ HTTP/1.1" 302 0
+[30/Jan/2023 08:27:50] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 08:27:50] "GET /var_analysis/ HTTP/1.1" 200 7625
+[30/Jan/2023 08:27:50] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:27:50] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="">---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL" selected>ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" value="c.1679-23C&gt;T" maxlength="25" id="id_form-0-var">
+/work/NBS//outputs/2023-01-30/ACADVL_8_jleavitt_2023-01-30
+warning: commands will be executed using /bin/sh
+job 919 at Mon Jan 30 08:27:00 2023
+ACADVL:c.1679-23C>T
+[30/Jan/2023 08:27:59] "POST /var_analysis/ HTTP/1.1" 302 0
+[30/Jan/2023 08:27:59] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 08:27:59] "GET /var_analysis/ HTTP/1.1" 200 7625
+[30/Jan/2023 08:27:59] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:27:59] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 08:28:02] "GET /var_analysis/results HTTP/1.1" 200 8544
+[30/Jan/2023 08:28:02] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 08:28:02] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 08:28:02] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:28:02] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 08:37:31] "GET / HTTP/1.1" 200 7151
+[30/Jan/2023 08:37:37] "GET /var_analysis/results HTTP/1.1" 200 8541
+[30/Jan/2023 08:37:43] "GET /var_analysis/results/10 HTTP/1.1" 200 14754
+[30/Jan/2023 08:37:46] "GET /var_analysis/results/9 HTTP/1.1" 200 13331
+[30/Jan/2023 08:37:49] "GET /var_analysis/results/8 HTTP/1.1" 200 15552
+[30/Jan/2023 08:37:53] "GET /var_analysis/results/7 HTTP/1.1" 200 20525
+[30/Jan/2023 08:39:02] "GET /var_analysis/results HTTP/1.1" 200 8541
+[30/Jan/2023 08:40:25] "GET /var_analysis/results HTTP/1.1" 200 8541
+[30/Jan/2023 08:42:16] "GET /var_analysis/results HTTP/1.1" 200 8541
+[30/Jan/2023 08:43:37] "GET /var_analysis/results HTTP/1.1" 200 8544
+[30/Jan/2023 08:43:37] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:43:37] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 08:43:37] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 08:43:37] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 08:43:37] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 08:43:40] "GET /var_analysis/results/ACADVL HTTP/1.1" 200 7928
+[30/Jan/2023 08:43:41] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 08:43:41] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:43:41] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 08:43:41] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 08:44:08] "GET /var_analysis/results/ACADVL HTTP/1.1" 200 7928
+[30/Jan/2023 08:44:08] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 08:44:08] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:44:08] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 08:44:08] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 08:44:23] "GET /var_analysis/results HTTP/1.1" 200 8544
+[30/Jan/2023 08:44:23] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 08:44:23] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 08:44:23] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:44:23] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 08:44:23] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 08:44:30] "GET /var_analysis/results/7 HTTP/1.1" 200 20528
+[30/Jan/2023 08:44:30] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 08:45:03] "GET /var_analysis/results HTTP/1.1" 200 8541
+[30/Jan/2023 09:18:22] "GET /var_analysis/results HTTP/1.1" 200 8541
+[30/Jan/2023 09:34:29] "GET /var_analysis/results/8 HTTP/1.1" 200 15555
+[30/Jan/2023 09:34:29] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 09:34:44] "GET /var_analysis/results/9 HTTP/1.1" 200 13334
+[30/Jan/2023 09:34:44] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 09:34:51] "GET /var_analysis/results/10 HTTP/1.1" 200 14757
+[30/Jan/2023 09:34:51] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 10:43:02] "GET /var_analysis/results HTTP/1.1" 200 8541
+[30/Jan/2023 12:06:04] "GET / HTTP/1.1" 200 2212
+[30/Jan/2023 12:06:04] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:06:04] "GET /favicon.ico HTTP/1.1" 404 179
+[30/Jan/2023 12:06:20] "GET /accounts/login/ HTTP/1.1" 200 2125
+[30/Jan/2023 12:06:20] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:13:57] "GET /admin/ HTTP/1.1" 200 8151
+[30/Jan/2023 12:14:01] "GET /admin/auth/user/ HTTP/1.1" 200 11909
+[30/Jan/2023 12:14:01] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:14:01] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:14:01] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:14:04] "GET /admin/auth/user/add/ HTTP/1.1" 200 8351
+[30/Jan/2023 12:14:04] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:14:04] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:14:04] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:14:36] "POST /admin/auth/user/add/ HTTP/1.1" 302 0
+[30/Jan/2023 12:14:37] "GET /admin/auth/user/9/change/ HTTP/1.1" 200 18407
+[30/Jan/2023 12:14:37] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:14:37] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:14:37] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:15:15] "POST /admin/auth/user/9/change/ HTTP/1.1" 302 0
+[30/Jan/2023 12:15:15] "GET /admin/auth/user/ HTTP/1.1" 200 12531
+[30/Jan/2023 12:15:15] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:15:15] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:15:15] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:15:20] "GET /admin/var_analysis/reviewer/ HTTP/1.1" 200 8341
+[30/Jan/2023 12:15:20] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:15:20] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:15:20] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:15:22] "GET / HTTP/1.1" 200 2212
+[30/Jan/2023 12:15:22] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:15:22] "GET /favicon.ico HTTP/1.1" 404 179
+[30/Jan/2023 12:15:26] "GET /accounts/login/ HTTP/1.1" 200 2125
+[30/Jan/2023 12:15:26] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:15:46] "GET /admin/var_analysis/reviewer/7/change/ HTTP/1.1" 200 8972
+[30/Jan/2023 12:15:46] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:15:46] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:15:46] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:15:52] "POST /accounts/login/ HTTP/1.1" 200 2276
+[30/Jan/2023 12:15:52] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:15:52] "GET /admin/var_analysis/reviewer/ HTTP/1.1" 200 8341
+[30/Jan/2023 12:15:54] "GET /admin/var_analysis/reviewer/6/change/ HTTP/1.1" 200 8972
+[30/Jan/2023 12:15:54] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:15:54] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:15:54] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:15:58] "GET /admin/var_analysis/reviewer/ HTTP/1.1" 200 8341
+[30/Jan/2023 12:16:00] "GET /admin/var_analysis/reviewer/5/change/ HTTP/1.1" 200 8972
+[30/Jan/2023 12:16:00] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:00] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:00] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:16:05] "POST /admin/var_analysis/reviewer/5/change/ HTTP/1.1" 302 0
+[30/Jan/2023 12:16:06] "GET /admin/var_analysis/reviewer/ HTTP/1.1" 200 8546
+[30/Jan/2023 12:16:06] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:06] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:06] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:16:08] "GET /admin/var_analysis/reviewer/4/change/ HTTP/1.1" 200 8972
+[30/Jan/2023 12:16:08] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:08] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:08] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:16:12] "POST /admin/var_analysis/reviewer/4/change/ HTTP/1.1" 302 0
+[30/Jan/2023 12:16:12] "GET /admin/var_analysis/reviewer/ HTTP/1.1" 200 8546
+[30/Jan/2023 12:16:13] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:13] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:13] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:16:15] "GET /admin/var_analysis/reviewer/add/ HTTP/1.1" 200 8732
+[30/Jan/2023 12:16:16] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:16:16] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:16] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:18] "POST /accounts/login/ HTTP/1.1" 302 0
+[30/Jan/2023 12:16:18] "GET / HTTP/1.1" 200 9521
+[30/Jan/2023 12:16:19] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:16:19] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:19] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:19] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:16:19] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:16:21] "POST /admin/var_analysis/reviewer/add/ HTTP/1.1" 302 0
+[30/Jan/2023 12:16:22] "GET /admin/var_analysis/reviewer/ HTTP/1.1" 200 8753
+[30/Jan/2023 12:16:22] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:22] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:22] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:16:24] "GET /admin/auth/user/ HTTP/1.1" 200 12335
+[30/Jan/2023 12:16:24] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:24] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:24] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:16:25] "GET /admin/auth/user/add/ HTTP/1.1" 200 8351
+[30/Jan/2023 12:16:26] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:16:26] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:26] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:33] "GET /password_change HTTP/1.1" 301 0
+[30/Jan/2023 12:16:33] "GET /password_change/ HTTP/1.1" 200 4107
+[30/Jan/2023 12:16:34] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:16:43] "POST /admin/auth/user/add/ HTTP/1.1" 302 0
+[30/Jan/2023 12:16:43] "GET /admin/auth/user/10/change/ HTTP/1.1" 200 18390
+[30/Jan/2023 12:16:43] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:43] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:16:43] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:17:12] "POST /admin/auth/user/10/change/ HTTP/1.1" 302 0
+[30/Jan/2023 12:17:12] "GET /admin/auth/user/ HTTP/1.1" 200 12946
+[30/Jan/2023 12:17:12] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:17:12] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:17:12] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:17:18] "POST /password_change/ HTTP/1.1" 200 4293
+[30/Jan/2023 12:17:18] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:17:19] "GET /admin/var_analysis/reviewer/ HTTP/1.1" 200 8550
+[30/Jan/2023 12:17:19] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:17:19] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:17:19] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:17:22] "GET /admin/var_analysis/reviewer/add/ HTTP/1.1" 200 8768
+[30/Jan/2023 12:17:22] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:17:22] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:17:22] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:17:28] "POST /admin/var_analysis/reviewer/add/ HTTP/1.1" 302 0
+[30/Jan/2023 12:17:29] "GET /admin/var_analysis/reviewer/ HTTP/1.1" 200 8962
+[30/Jan/2023 12:17:29] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:17:29] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:17:29] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:17:51] "POST /password_change/ HTTP/1.1" 200 4192
+[30/Jan/2023 12:17:51] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:18:44] "POST /password_change/ HTTP/1.1" 200 4192
+[30/Jan/2023 12:18:44] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:18:46] "GET / HTTP/1.1" 200 7151
+[30/Jan/2023 12:18:57] "GET /admin/var_analysis/reviewer/1/change/ HTTP/1.1" 200 9008
+[30/Jan/2023 12:18:57] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:18:57] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:18:57] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:19:00] "POST /admin/var_analysis/reviewer/1/change/ HTTP/1.1" 302 0
+[30/Jan/2023 12:19:00] "GET /admin/var_analysis/reviewer/ HTTP/1.1" 200 8964
+[30/Jan/2023 12:19:00] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:19:00] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:19:00] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:19:02] "GET / HTTP/1.1" 200 9516
+[30/Jan/2023 12:20:42] "GET / HTTP/1.1" 200 9521
+[30/Jan/2023 12:20:42] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:20:42] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:20:42] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:20:42] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:20:48] "GET /var_analysis/results/ACADVL HTTP/1.1" 200 7926
+[30/Jan/2023 12:20:48] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:20:48] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:20:48] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:20:48] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:20:48] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:21:22] "GET /var_analysis/results/ACADVL HTTP/1.1" 200 7926
+[30/Jan/2023 12:21:22] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:21:22] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:21:22] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:21:22] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:23:49] "GET / HTTP/1.1" 200 2212
+[30/Jan/2023 12:23:49] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:24:07] "GET /favicon.ico HTTP/1.1" 404 179
+[30/Jan/2023 12:24:10] "GET /accounts/login/ HTTP/1.1" 200 2125
+[30/Jan/2023 12:24:10] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:24:38] "POST /accounts/login/ HTTP/1.1" 200 2279
+[30/Jan/2023 12:24:38] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:25:10] "POST /accounts/login/ HTTP/1.1" 200 2279
+[30/Jan/2023 12:25:10] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:25:35] "GET /admin/var_analysis/reviewer/4/change/ HTTP/1.1" 200 9024
+[30/Jan/2023 12:25:35] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:25:36] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:25:36] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:25:38] "GET /admin/auth/user/ HTTP/1.1" 200 12753
+[30/Jan/2023 12:25:38] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:25:38] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:25:38] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:25:41] "GET /admin/auth/user/5/change/ HTTP/1.1" 200 18281
+[30/Jan/2023 12:25:41] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:25:41] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:25:41] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:25:48] "GET /accounts/logout/ HTTP/1.1" 302 0
+[30/Jan/2023 12:25:48] "GET / HTTP/1.1" 200 2212
+[30/Jan/2023 12:25:49] "GET /accounts/login/ HTTP/1.1" 200 2125
+[30/Jan/2023 12:25:56] "POST /accounts/login/ HTTP/1.1" 302 0
+[30/Jan/2023 12:25:56] "GET / HTTP/1.1" 200 9521
+[30/Jan/2023 12:26:00] "GET /password_change/ HTTP/1.1" 200 4107
+[30/Jan/2023 12:26:08] "POST /accounts/login/ HTTP/1.1" 302 0
+[30/Jan/2023 12:26:08] "GET / HTTP/1.1" 200 8318
+[30/Jan/2023 12:26:08] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:26:08] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:26:08] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:26:08] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:26:08] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:26:18] "POST /password_change/ HTTP/1.1" 302 0
+[30/Jan/2023 12:26:18] "GET /password_change/ HTTP/1.1" 200 4107
+[30/Jan/2023 12:26:21] "GET /accounts/logout/ HTTP/1.1" 302 0
+[30/Jan/2023 12:26:22] "GET / HTTP/1.1" 200 2212
+[30/Jan/2023 12:26:23] "GET /accounts/login/ HTTP/1.1" 200 2125
+[30/Jan/2023 12:26:25] "GET /password_change HTTP/1.1" 301 0
+[30/Jan/2023 12:26:25] "GET /password_change/ HTTP/1.1" 200 4110
+[30/Jan/2023 12:26:25] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:26:31] "POST /accounts/login/ HTTP/1.1" 302 0
+[30/Jan/2023 12:26:32] "GET / HTTP/1.1" 200 9521
+[30/Jan/2023 12:27:04] "POST /password_change/ HTTP/1.1" 302 0
+[30/Jan/2023 12:27:04] "GET /password_change/ HTTP/1.1" 200 4110
+[30/Jan/2023 12:27:05] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:27:08] "GET / HTTP/1.1" 200 8318
+[30/Jan/2023 12:27:08] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:27:08] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:27:08] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:27:08] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:27:16] "GET /var_analysis/results/ABCD1 HTTP/1.1" 200 6408
+[30/Jan/2023 12:27:16] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:27:16] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:27:16] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:27:16] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:27:23] "GET /var_analysis/results/ABCD1 HTTP/1.1" 200 6408
+[30/Jan/2023 12:27:23] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:27:23] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:27:23] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:27:24] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:27:29] "GET /var_analysis/results/5 HTTP/1.1" 200 17948
+[30/Jan/2023 12:27:29] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:28:28] "GET /admin/auth/user/ HTTP/1.1" 302 0
+[30/Jan/2023 12:28:28] "GET /admin/login/?next=/admin/auth/user/ HTTP/1.1" 200 2528
+[30/Jan/2023 12:28:34] "GET /accounts/logout/ HTTP/1.1" 302 0
+[30/Jan/2023 12:28:34] "GET / HTTP/1.1" 200 2212
+[30/Jan/2023 12:28:38] "GET /accounts/login/ HTTP/1.1" 200 2125
+[30/Jan/2023 12:28:44] "POST /accounts/login/ HTTP/1.1" 302 0
+[30/Jan/2023 12:28:44] "GET / HTTP/1.1" 200 9516
+[30/Jan/2023 12:28:47] "GET /admin/auth/user/5/change/ HTTP/1.1" 200 18281
+[30/Jan/2023 12:28:48] "GET /admin/ HTTP/1.1" 200 8235
+[30/Jan/2023 12:28:50] "GET /admin/auth/user/ HTTP/1.1" 200 12753
+[30/Jan/2023 12:28:50] "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:28:50] "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+[30/Jan/2023 12:28:50] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[30/Jan/2023 12:29:31] "GET /password_change/ HTTP/1.1" 200 2212
+[30/Jan/2023 12:29:32] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:30:07] "GET / HTTP/1.1" 200 8318
+[30/Jan/2023 12:30:07] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:30:07] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:30:07] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:30:07] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:30:14] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 12:30:14] "GET /var_analysis/ HTTP/1.1" 200 7579
+[30/Jan/2023 12:30:14] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:30:14] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="">---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL" selected>ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" value="c.863T&gt;A" maxlength="25" id="id_form-0-var">
+/work/NBS//outputs/2023-01-30/ACADVL_9_bshrestha_2023-01-30
+warning: commands will be executed using /bin/sh
+job 920 at Mon Jan 30 12:31:00 2023
+ACADVL:c.863T>A
+[30/Jan/2023 12:31:08] "POST /var_analysis/ HTTP/1.1" 302 0
+[30/Jan/2023 12:31:09] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 12:31:09] "GET /var_analysis/ HTTP/1.1" 200 7626
+[30/Jan/2023 12:31:09] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:31:09] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:31:19] "GET / HTTP/1.1" 200 8822
+[30/Jan/2023 12:31:19] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:31:19] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:31:19] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:31:19] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:31:26] "GET /var_analysis/results/ACADVL HTTP/1.1" 200 8473
+[30/Jan/2023 12:31:26] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:31:26] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:31:26] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:31:26] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:31:26] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:31:36] "GET /var_analysis/results/11 HTTP/1.1" 200 13561
+[30/Jan/2023 12:31:36] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:32:13] "GET /var_analysis/results/11 HTTP/1.1" 200 13561
+[30/Jan/2023 12:32:13] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:32:23] "GET / HTTP/1.1" 200 8822
+[30/Jan/2023 12:32:23] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:32:23] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:32:23] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:32:23] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:32:42] "GET /var_analysis/results/7 HTTP/1.1" 200 20754
+[30/Jan/2023 12:32:42] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:33:20] "GET / HTTP/1.1" 200 8822
+[30/Jan/2023 12:33:20] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:33:20] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:33:20] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:33:20] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:33:21] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:33:34] "GET /var_analysis/results/11 HTTP/1.1" 200 13561
+[30/Jan/2023 12:33:34] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:33:47] "GET /var_analysis/results/8 HTTP/1.1" 200 15781
+[30/Jan/2023 12:33:47] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:36:36] "GET / HTTP/1.1" 200 8822
+[30/Jan/2023 12:36:36] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:36:36] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:36:36] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:36:36] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:36:37] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:36:41] "GET /var_analysis/results/ACADVL HTTP/1.1" 200 8473
+[30/Jan/2023 12:36:41] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:36:41] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:36:41] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:36:41] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:36:49] "GET /var_analysis/results/11 HTTP/1.1" 200 13561
+[30/Jan/2023 12:36:49] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:37:06] "GET / HTTP/1.1" 200 8822
+[30/Jan/2023 12:37:06] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:37:06] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:37:06] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:37:06] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:37:11] "GET /var_analysis/results/ACADVL HTTP/1.1" 200 8473
+[30/Jan/2023 12:37:12] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:37:12] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:37:12] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:37:12] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:37:12] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:37:20] "GET / HTTP/1.1" 200 8822
+[30/Jan/2023 12:37:21] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:37:21] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:37:21] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:37:21] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:37:21] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 12:37:23] "GET /var_analysis/ HTTP/1.1" 200 7408
+[30/Jan/2023 12:37:24] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:37:24] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:37:38] "GET / HTTP/1.1" 200 8822
+[30/Jan/2023 12:37:38] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:37:38] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:37:38] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:37:38] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:37:38] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:37:46] "GET /var_analysis/results/11 HTTP/1.1" 200 13561
+[30/Jan/2023 12:37:46] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:38:35] "GET / HTTP/1.1" 200 8822
+[30/Jan/2023 12:38:35] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:38:35] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:38:35] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:38:35] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 12:38:40] "GET /var_analysis/ HTTP/1.1" 200 7408
+[30/Jan/2023 12:38:40] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:38:41] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 12:38:42] "POST /var_analysis/ HTTP/1.1" 200 7408
+[30/Jan/2023 12:38:42] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:38:42] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:38:43] "GET /var_analysis/results HTTP/1.1" 200 9302
+[30/Jan/2023 12:38:43] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:38:43] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:38:43] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:38:43] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:39:03] "GET /var_analysis/results/11 HTTP/1.1" 200 13561
+[30/Jan/2023 12:39:03] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:39:07] "GET /var_analysis/results/10 HTTP/1.1" 200 14983
+[30/Jan/2023 12:39:07] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:39:14] "GET /var_analysis/results/7 HTTP/1.1" 200 20754
+[30/Jan/2023 12:39:14] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:40:04] "GET /var_analysis/results/8 HTTP/1.1" 200 15781
+[30/Jan/2023 12:40:04] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:40:07] "GET /var_analysis/results/9 HTTP/1.1" 200 13560
+[30/Jan/2023 12:40:07] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:40:10] "GET /var_analysis/results/10 HTTP/1.1" 200 14983
+[30/Jan/2023 12:40:10] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:40:58] "GET /var_analysis/results HTTP/1.1" 200 9302
+[30/Jan/2023 12:40:58] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:40:58] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:40:58] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:40:58] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:41:02] "GET /var_analysis/results/11 HTTP/1.1" 200 13561
+[30/Jan/2023 12:41:02] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:42:13] "GET /var_analysis/results/8 HTTP/1.1" 200 15781
+[30/Jan/2023 12:42:13] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:53:41] "GET / HTTP/1.1" 200 8822
+[30/Jan/2023 12:53:41] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:53:41] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 12:53:41] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 12:53:41] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 12:53:44] "GET /var_analysis/results/11 HTTP/1.1" 200 13561
+[30/Jan/2023 12:53:44] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 12:58:21] "GET /admin/ HTTP/1.1" 200 8235
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 12:58:25] "GET /var_analysis/ HTTP/1.1" 200 7404
+[30/Jan/2023 12:58:27] "GET /var_analysis/results HTTP/1.1" 200 9298
+[30/Jan/2023 12:58:40] "GET /var_analysis/results/11 HTTP/1.1" 200 13557
+[30/Jan/2023 12:58:42] "GET / HTTP/1.1" 200 10102
+[30/Jan/2023 13:06:48] "GET / HTTP/1.1" 200 10102
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 13:06:56] "GET /var_analysis/ HTTP/1.1" 200 7404
+[30/Jan/2023 13:06:57] "GET /var_analysis/results HTTP/1.1" 200 9298
+[30/Jan/2023 13:07:02] "GET /password_change/ HTTP/1.1" 200 4106
+[30/Jan/2023 13:07:03] "GET / HTTP/1.1" 200 10102
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 13:07:05] "GET /var_analysis/ HTTP/1.1" 200 7404
+[30/Jan/2023 13:07:07] "GET / HTTP/1.1" 200 10102
+[30/Jan/2023 13:07:09] "GET /var_analysis/results HTTP/1.1" 200 9298
+[30/Jan/2023 13:07:10] "GET / HTTP/1.1" 200 10102
+[30/Jan/2023 13:19:13] "GET / HTTP/1.1" 200 2212
+[30/Jan/2023 13:19:14] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:19:14] "GET /favicon.ico HTTP/1.1" 404 179
+[30/Jan/2023 13:19:27] "GET /accounts/login/ HTTP/1.1" 200 2125
+[30/Jan/2023 13:19:27] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:20:08] "POST /accounts/login/ HTTP/1.1" 302 0
+[30/Jan/2023 13:20:08] "GET / HTTP/1.1" 200 7582
+[30/Jan/2023 13:20:08] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:20:08] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 13:20:08] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 13:20:08] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 13:20:18] "GET /password_change HTTP/1.1" 301 0
+[30/Jan/2023 13:20:18] "GET /password_change/ HTTP/1.1" 200 4110
+[30/Jan/2023 13:20:18] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:21:33] "POST /password_change/ HTTP/1.1" 302 0
+[30/Jan/2023 13:21:33] "GET /password_change/ HTTP/1.1" 200 4110
+[30/Jan/2023 13:21:33] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:21:39] "GET / HTTP/1.1" 200 7582
+[30/Jan/2023 13:21:39] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:21:39] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 13:21:39] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 13:21:40] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 13:21:46] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 13:21:46] "GET /var_analysis/ HTTP/1.1" 200 7579
+[30/Jan/2023 13:21:46] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:21:46] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="">---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL" selected>ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" value="c.481G&gt;A" maxlength="25" id="id_form-0-var">
+/work/NBS//outputs/2023-01-30/ACADVL_10_dmartinez_2023-01-30
+warning: commands will be executed using /bin/sh
+job 921 at Mon Jan 30 13:22:00 2023
+ACADVL:c.481G>A
+[30/Jan/2023 13:22:40] "POST /var_analysis/ HTTP/1.1" 302 0
+[30/Jan/2023 13:22:41] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 13:22:41] "GET /var_analysis/ HTTP/1.1" 200 7626
+[30/Jan/2023 13:22:41] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:22:41] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 13:23:05] "GET /var_analysis/ HTTP/1.1" 200 7408
+[30/Jan/2023 13:23:05] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:23:05] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 13:23:07] "GET /var_analysis/results HTTP/1.1" 200 10062
+[30/Jan/2023 13:23:07] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:23:07] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 13:23:07] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 13:23:07] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 13:23:14] "GET /var_analysis/results/12 HTTP/1.1" 200 4954
+[30/Jan/2023 13:23:14] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:23:19] "GET /var_analysis/results/ACADVL HTTP/1.1" 200 9018
+[30/Jan/2023 13:23:19] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 13:23:19] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:23:19] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 13:23:19] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 13:23:34] "GET /var_analysis/results/12 HTTP/1.1" 200 4954
+[30/Jan/2023 13:23:34] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:23:38] "GET /var_analysis/results/11 HTTP/1.1" 200 13561
+[30/Jan/2023 13:23:38] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:24:49] "GET /var_analysis/results HTTP/1.1" 200 10062
+[30/Jan/2023 13:24:49] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:24:49] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 13:24:49] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 13:24:49] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 13:24:56] "GET /var_analysis/results/12 HTTP/1.1" 200 4954
+[30/Jan/2023 13:24:56] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 13:25:01] "GET /var_analysis/ HTTP/1.1" 200 7408
+[30/Jan/2023 13:25:01] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:25:01] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="">---------</option>
+
+  <option value="ABCD1" selected>ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" value="c.521T&gt;C" maxlength="25" id="id_form-0-var">
+/work/NBS//outputs/2023-01-30/ABCD1_11_dmartinez_2023-01-30
+warning: commands will be executed using /bin/sh
+job 922 at Mon Jan 30 13:25:00 2023
+ABCD1:c.521T>C
+[30/Jan/2023 13:25:23] "POST /var_analysis/ HTTP/1.1" 302 0
+[30/Jan/2023 13:25:23] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 13:25:23] "GET /var_analysis/ HTTP/1.1" 200 7626
+[30/Jan/2023 13:25:23] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:25:24] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 13:25:26] "GET / HTTP/1.1" 200 8424
+[30/Jan/2023 13:25:26] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:25:26] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 13:25:26] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 13:25:26] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 13:26:58] "GET / HTTP/1.1" 200 8424
+[30/Jan/2023 13:26:58] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:26:58] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 13:26:58] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 13:26:58] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 13:27:07] "GET /var_analysis/results/12 HTTP/1.1" 200 4954
+[30/Jan/2023 13:27:07] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:27:10] "GET /var_analysis/results/11 HTTP/1.1" 200 13561
+[30/Jan/2023 13:27:10] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:27:15] "GET /var_analysis/results HTTP/1.1" 200 10814
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 13:27:23] "GET /var_analysis/ HTTP/1.1" 200 7408
+[30/Jan/2023 13:27:23] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:27:23] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 13:27:24] "GET / HTTP/1.1" 200 11272
+[30/Jan/2023 13:28:03,514] - Broken pipe from ('160.42.25.134', 56429)
+
+[30/Jan/2023 13:28:03,516] - Broken pipe from ('160.42.25.134', 56406)
+
+[30/Jan/2023 13:28:03,516] - Broken pipe from ('160.42.25.134', 56489)
+
+[30/Jan/2023 13:28:03,518] - Broken pipe from ('160.42.25.134', 56418)
+
+[30/Jan/2023 13:28:03,520] - Broken pipe from ('160.42.25.134', 56430)
+
+[30/Jan/2023 13:31:39] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:31:39] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 13:31:39] "GET /favicon.ico HTTP/1.1" 404 179
+[30/Jan/2023 13:31:41] "GET / HTTP/1.1" 200 8424
+[30/Jan/2023 13:31:41] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:31:41] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 13:31:41] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 13:31:41] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="">---------</option>
+
+  <option value="ABCD1" selected>ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" value="c.1532+11G&gt;A" maxlength="25" id="id_form-0-var">
+/work/NBS//outputs/2023-01-30/ABCD1_12_dmartinez_2023-01-30
+warning: commands will be executed using /bin/sh
+job 923 at Mon Jan 30 13:32:00 2023
+ABCD1:c.1532+11G>A
+[30/Jan/2023 13:32:02] "POST /var_analysis/ HTTP/1.1" 302 0
+[30/Jan/2023 13:32:02] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 13:32:02] "GET /var_analysis/ HTTP/1.1" 200 7626
+[30/Jan/2023 13:32:02] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:32:03] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 13:32:06] "GET /var_analysis/results HTTP/1.1" 200 11578
+[30/Jan/2023 13:32:06] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:32:06] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 13:32:06] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 13:32:06] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 13:32:09] "GET /var_analysis/results/12 HTTP/1.1" 200 18413
+[30/Jan/2023 13:32:09] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 13:35:47] "GET /var_analysis/results HTTP/1.1" 200 11574
+[30/Jan/2023 13:35:50] "GET /var_analysis/results/14 HTTP/1.1" 200 13559
+[30/Jan/2023 13:35:53] "GET /var_analysis/results/13 HTTP/1.1" 200 13555
+[30/Jan/2023 13:35:56] "GET /var_analysis/results/12 HTTP/1.1" 200 18409
+[30/Jan/2023 13:36:00] "GET /var_analysis/results/11 HTTP/1.1" 200 13557
+[30/Jan/2023 13:36:03] "GET /var_analysis/results/10 HTTP/1.1" 200 14979
+[30/Jan/2023 13:36:08] "GET /var_analysis/results/8 HTTP/1.1" 200 15777
+[30/Jan/2023 13:36:41] "GET /var_analysis/results/7 HTTP/1.1" 200 20750
+[30/Jan/2023 13:48:18] "POST /var_analysis/results/12 HTTP/1.1" 302 0
+[30/Jan/2023 13:48:18] "GET /var_analysis/results/12 HTTP/1.1" 200 18425
+[30/Jan/2023 13:48:18] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 14:18:26] "GET / HTTP/1.1" 200 6107
+[30/Jan/2023 14:18:27] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 14:18:27] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 14:18:27] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 14:18:27] "GET /favicon.ico HTTP/1.1" 404 179
+[30/Jan/2023 14:18:32] "GET /var_analysis/results HTTP/1.1" 200 11589
+[30/Jan/2023 14:18:32] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 14:18:32] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 14:18:32] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 14:18:32] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 14:18:36] "GET /var_analysis/results/12 HTTP/1.1" 200 18424
+[30/Jan/2023 14:18:36] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 14:39:58] "GET /var_analysis/results/ACADVL HTTP/1.1" 200 9014
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 15:15:47] "GET /var_analysis/ HTTP/1.1" 200 7408
+[30/Jan/2023 15:15:48] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 15:15:48] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 15:15:50] "GET /var_analysis/results HTTP/1.1" 200 11590
+[30/Jan/2023 15:15:50] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 15:15:50] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[30/Jan/2023 15:15:50] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[30/Jan/2023 15:15:50] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 15:15:51] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[30/Jan/2023 15:15:56] "GET /var_analysis/results/11 HTTP/1.1" 200 13561
+[30/Jan/2023 15:15:56] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[30/Jan/2023 15:41:22] "GET / HTTP/1.1" 200 11860
+[30/Jan/2023 15:41:23] "GET /var_analysis/results HTTP/1.1" 200 11586
+[30/Jan/2023 15:41:30] "GET /var_analysis/results/12 HTTP/1.1" 200 18421
+[30/Jan/2023 15:41:36] "GET / HTTP/1.1" 200 11860
+[30/Jan/2023 15:41:42] "GET / HTTP/1.1" 200 11860
+[30/Jan/2023 15:41:44] "GET /var_analysis/results HTTP/1.1" 200 11586
+[30/Jan/2023 15:41:48] "GET / HTTP/1.1" 200 11860
+[30/Jan/2023 15:55:21] "GET /var_analysis/results HTTP/1.1" 200 11586
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 15:55:24] "GET /var_analysis/ HTTP/1.1" 200 7404
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="">---------</option>
+
+  <option value="ABCD1" selected>ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" value="c.-59C&gt;T" maxlength="25" id="id_form-0-var">
+/work/NBS//outputs/2023-01-30/ABCD1_4_klong_2023-01-30
+warning: commands will be executed using /bin/sh
+job 924 at Mon Jan 30 15:55:00 2023
+ABCD1:c.-59C>T
+Updating record...
+[30/Jan/2023 15:55:36] "POST /var_analysis/ HTTP/1.1" 302 0
+[30/Jan/2023 15:55:36] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[30/Jan/2023 15:55:36] "GET /var_analysis/ HTTP/1.1" 200 7622
+[30/Jan/2023 15:55:37] "GET /var_analysis/results HTTP/1.1" 200 11587
+[30/Jan/2023 15:55:40] "GET /var_analysis/results/15 HTTP/1.1" 200 4948
+[30/Jan/2023 16:00:37] "GET /var_analysis/results/15 HTTP/1.1" 200 4948
+[30/Jan/2023 16:05:41] "GET /var_analysis/results/15 HTTP/1.1" 200 17944
+[30/Jan/2023 16:06:20] "GET / HTTP/1.1" 200 11861
+[30/Jan/2023 16:06:25] "GET /var_analysis/results HTTP/1.1" 200 11587
+[30/Jan/2023 17:10:40] "GET /admin/ HTTP/1.1" 200 8235
+[30/Jan/2023 17:10:40] "GET /favicon.ico HTTP/1.1" 404 179
+[30/Jan/2023 17:10:45] "GET / HTTP/1.1" 200 11861
+[30/Jan/2023 17:10:49] "GET /var_analysis/results HTTP/1.1" 200 11587
+[30/Jan/2023 17:18:18] "GET /var_analysis/results/ACADVL HTTP/1.1" 200 9014
+[31/Jan/2023 09:37:19] "GET / HTTP/1.1" 200 2212
+[31/Jan/2023 09:37:20] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:37:23] "GET / HTTP/1.1" 200 2212
+[31/Jan/2023 09:37:23] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:37:26] "GET /accounts/login/ HTTP/1.1" 200 2125
+[31/Jan/2023 09:37:26] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:41:16] "POST /accounts/login/ HTTP/1.1" 200 2278
+[31/Jan/2023 09:41:16] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:43:42] "POST /accounts/login/ HTTP/1.1" 200 2278
+[31/Jan/2023 09:43:42] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:45:12] "POST /accounts/login/ HTTP/1.1" 302 0
+[31/Jan/2023 09:45:12] "GET / HTTP/1.1" 200 8844
+[31/Jan/2023 09:45:12] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:45:13] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:45:13] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[31/Jan/2023 09:45:13] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[31/Jan/2023 09:45:13] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[31/Jan/2023 09:45:34] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[31/Jan/2023 09:45:35] "GET /var_analysis/ HTTP/1.1" 200 7407
+[31/Jan/2023 09:45:35] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:45:35] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="">---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB" selected>HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[31/Jan/2023 09:46:31] "POST /var_analysis/ HTTP/1.1" 200 7407
+[31/Jan/2023 09:46:31] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:46:31] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:46:53] "GET / HTTP/1.1" 200 8844
+[31/Jan/2023 09:46:53] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[31/Jan/2023 09:46:53] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:46:53] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:46:53] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[31/Jan/2023 09:46:58] "GET /var_analysis/results/ABCD1 HTTP/1.1" 200 7498
+[31/Jan/2023 09:46:58] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:46:58] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[31/Jan/2023 09:46:58] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[31/Jan/2023 09:46:58] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:47:25] "GET / HTTP/1.1" 200 8844
+[31/Jan/2023 09:47:26] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:47:26] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:47:26] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[31/Jan/2023 09:47:26] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[31/Jan/2023 09:47:31] "GET /var_analysis/results/ACADVL HTTP/1.1" 200 9017
+[31/Jan/2023 09:47:31] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:47:32] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[31/Jan/2023 09:47:32] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:47:32] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[31/Jan/2023 09:47:41] "GET /var_analysis/results/7 HTTP/1.1" 200 20753
+[31/Jan/2023 09:47:41] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:48:39] "GET /var_analysis/results HTTP/1.1" 200 11590
+[31/Jan/2023 09:48:39] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[31/Jan/2023 09:48:39] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[31/Jan/2023 09:48:39] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:48:39] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:48:49] "GET /var_analysis/results/ACADVL HTTP/1.1" 200 9017
+[31/Jan/2023 09:48:49] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[31/Jan/2023 09:48:49] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:48:49] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[31/Jan/2023 09:48:49] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:49:02] "GET /var_analysis/results/ACADVL HTTP/1.1" 200 9017
+[31/Jan/2023 09:49:03] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[31/Jan/2023 09:49:03] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:49:03] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:49:03] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[31/Jan/2023 09:49:19] "GET / HTTP/1.1" 200 8844
+[31/Jan/2023 09:49:19] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:49:19] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[31/Jan/2023 09:49:19] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:49:19] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[31/Jan/2023 09:49:24] "GET /var_analysis/ HTTP/1.1" 200 7407
+[31/Jan/2023 09:49:24] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:49:24] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:49:34] "GET / HTTP/1.1" 200 8844
+[31/Jan/2023 09:49:34] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:49:34] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[31/Jan/2023 09:49:34] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[31/Jan/2023 09:49:34] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[31/Jan/2023 09:49:48] "GET /var_analysis/ HTTP/1.1" 200 7407
+[31/Jan/2023 09:49:48] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:49:48] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="">---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL" selected>ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" value="c.-59C&gt;T" maxlength="25" id="id_form-0-var">
+/work/NBS//outputs/2023-01-31/ACADVL_13_istlouis_2023-01-31
+warning: commands will be executed using /bin/sh
+job 925 at Tue Jan 31 09:50:00 2023
+ACADVL:c.-59C>T
+[31/Jan/2023 09:50:02] "POST /var_analysis/ HTTP/1.1" 302 0
+[31/Jan/2023 09:50:03] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[31/Jan/2023 09:50:03] "GET /var_analysis/ HTTP/1.1" 200 7625
+[31/Jan/2023 09:50:03] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:50:03] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:53:50] "GET /var_analysis/results HTTP/1.1" 200 12349
+[31/Jan/2023 09:53:50] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[31/Jan/2023 09:53:50] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:53:50] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:53:50] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[31/Jan/2023 09:53:51] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[31/Jan/2023 09:54:31] "GET /var_analysis/ HTTP/1.1" 200 7407
+[31/Jan/2023 09:54:31] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:54:31] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="">---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL" selected>ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" value="c.965T&gt;C" maxlength="25" id="id_form-0-var">
+/work/NBS//outputs/2023-01-31/ACADVL_7_istlouis_2023-01-31
+warning: commands will be executed using /bin/sh
+job 926 at Tue Jan 31 09:54:00 2023
+ACADVL:c.965T>C
+Updating record...
+[31/Jan/2023 09:54:44] "POST /var_analysis/ HTTP/1.1" 302 0
+[31/Jan/2023 09:54:44] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[31/Jan/2023 09:54:44] "GET /var_analysis/ HTTP/1.1" 200 7625
+[31/Jan/2023 09:54:45] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:54:45] "GET /static/js/jquery.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="">---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL" selected>ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" value="c.965T&gt;C" maxlength="25" id="id_form-0-var">
+/work/NBS//outputs/2023-01-31/ACADVL_7_istlouis_2023-01-31
+warning: commands will be executed using /bin/sh
+job 927 at Tue Jan 31 09:55:00 2023
+ACADVL:c.965T>C
+Updating record...
+[31/Jan/2023 09:55:38] "POST /var_analysis/ HTTP/1.1" 302 0
+[31/Jan/2023 09:55:39] "GET /var_analysis HTTP/1.1" 301 0
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[31/Jan/2023 09:55:39] "GET /var_analysis/ HTTP/1.1" 200 7625
+[31/Jan/2023 09:55:39] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:55:39] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:55:50] "GET / HTTP/1.1" 200 9267
+[31/Jan/2023 09:55:50] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[31/Jan/2023 09:55:50] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:55:50] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:55:50] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[31/Jan/2023 09:55:50] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[31/Jan/2023 09:56:04] "GET /var_analysis/results/ABCD1 HTTP/1.1" 200 7498
+[31/Jan/2023 09:56:04] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:56:04] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[31/Jan/2023 09:56:04] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[31/Jan/2023 09:56:04] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+<select name="form-0-gene" id="id_form-0-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-0-var" maxlength="25" id="id_form-0-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+<select name="form-__prefix__-gene" id="id_form-__prefix__-gene">
+  <option value="" selected>---------</option>
+
+  <option value="ABCD1">ABCD1</option>
+
+  <option value="ACADVL">ACADVL</option>
+
+  <option value="HBB">HBB</option>
+
+</select>
+<input type="text" name="form-__prefix__-var" maxlength="25" id="id_form-__prefix__-var">
+[31/Jan/2023 09:57:14] "GET /var_analysis/ HTTP/1.1" 200 7407
+[31/Jan/2023 09:57:15] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[31/Jan/2023 09:57:15] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[01/Feb/2023 09:06:26] "GET / HTTP/1.1" 200 12448
+[01/Feb/2023 09:06:26] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[01/Feb/2023 09:06:26] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[01/Feb/2023 09:06:26] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[01/Feb/2023 09:06:26] "GET /favicon.ico HTTP/1.1" 404 179
+[01/Feb/2023 09:06:32] "GET /var_analysis/results HTTP/1.1" 200 12347
+[01/Feb/2023 09:06:32] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[01/Feb/2023 09:06:32] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[01/Feb/2023 09:06:32] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[01/Feb/2023 09:06:36] "GET / HTTP/1.1" 200 12448
+[01/Feb/2023 09:06:36] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[01/Feb/2023 09:06:36] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[01/Feb/2023 09:06:36] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[02/Feb/2023 10:08:53] "GET / HTTP/1.1" 200 12448
+[02/Feb/2023 10:08:53] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[02/Feb/2023 10:08:53] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[02/Feb/2023 10:08:53] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[02/Feb/2023 10:08:54] "GET /favicon.ico HTTP/1.1" 404 179
+[02/Feb/2023 10:08:57] "GET /var_analysis/results HTTP/1.1" 200 12347
+[02/Feb/2023 10:08:57] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[02/Feb/2023 10:08:57] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[02/Feb/2023 10:08:57] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[02/Feb/2023 10:09:00] "GET /var_analysis/results/7 HTTP/1.1" 200 20750
+[02/Feb/2023 10:09:00] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[02/Feb/2023 10:13:02,788] - Broken pipe from ('160.42.211.113', 53022)
+
+[02/Feb/2023 10:13:02,791] - Broken pipe from ('160.42.211.113', 53023)
+
+[02/Feb/2023 10:13:02,793] - Broken pipe from ('160.42.211.113', 53025)
+
+[02/Feb/2023 10:13:02,794] - Broken pipe from ('160.42.211.113', 53026)
+
+[06/Feb/2023 07:34:49] "GET / HTTP/1.1" 200 9272
+[06/Feb/2023 07:34:49] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[06/Feb/2023 07:34:49] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[06/Feb/2023 07:34:49] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[06/Feb/2023 07:34:49] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[06/Feb/2023 07:34:49] "GET /favicon.ico HTTP/1.1" 404 179
+[06/Feb/2023 07:34:58] "GET /var_analysis/results/ABCD1 HTTP/1.1" 200 7499
+[06/Feb/2023 07:34:58] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179
+[06/Feb/2023 07:34:58] "GET /static/js/jquery.fancyTable/src/fancyTable.js HTTP/1.1" 404 179
+[06/Feb/2023 07:34:58] "GET /static/js/jquery.js HTTP/1.1" 404 179
+[06/Feb/2023 07:34:58] "GET /static/bluebonnet/media/go_link.png HTTP/1.1" 404 179
+[06/Feb/2023 07:35:09] "GET /var_analysis/results/13 HTTP/1.1" 200 13559
+[06/Feb/2023 07:35:10] "GET /static/bluebonnet/media/DSHS_left.png HTTP/1.1" 404 179

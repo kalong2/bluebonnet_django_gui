@@ -20,22 +20,10 @@ from django.utils import timezone
 from django.urls import reverse
 from datetime import datetime
 import pytz
+from django.forms.widgets import Select
 
 def run(request):
     context = {}
-    '''
-    form = QueryForm(request.POST or None, request.FILES or None)
-    # check if form data is valid
-    if form.is_valid():
-        gene = form.data['gene']
-        var = form.data['var']
-        outfile = open("/home/klong/blah.txt", 'w')
-        subprocess.run(['echo', gene, var], check=True, text=True, stdout=outfile)
-    # save the form data to model
-        form.save()
-    #if request.POST:    
-        #subprocess.run(['touch','/home/klong/blah.txt'], check=True, text=True) 
-    '''
     QueryFormSet = formset_factory(QueryForm, extra = 0)
     formset = QueryFormSet(request.POST)
     if formset.is_valid():

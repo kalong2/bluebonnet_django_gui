@@ -28,6 +28,7 @@ urlpatterns = [
     path('', views.MultipleModelView.as_view(template_name='home.html'), name='home'),
     path('polls/', include('polls.urls')),
     path('var_analysis/', include('var_analysis.urls')),
+    path('password_change/', views.change_password, name="change_password"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

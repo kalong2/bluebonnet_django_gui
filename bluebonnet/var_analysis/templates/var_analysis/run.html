@@ -95,7 +95,7 @@ z-index:-10;
 $('#add_more').click(function() {
         var form_idx = $('#id_form-TOTAL_FORMS').val();
         $('#var-form-list').append($('#empty_form').html().replace(/__prefix__/g, form_idx));
-	$('#id_form-TOTAL_FORMS').val(parseInt(form_idx) + 1);
+	$('#id_form-TOTAL_FORMS').val(parseInt(form_idx) + 0);
 
     });
 </script>
@@ -109,6 +109,8 @@ $('#add_more').click(function() {
 	<br>- Click "Add Variant" for additional query forms
 	<br>- Genes must be chosen in the drop down menu
 	<br>- Variants must be entered in hgvsc format
+	<br>- If you add too many empty forms, just leave the extras blank. They will not be submitted.
+	<br>
 	<br>- Example: <br>Gene: ABCD1<br>Var: c.-59C>T</p>
 </div>
 </div>
