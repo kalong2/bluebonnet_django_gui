@@ -26,7 +26,6 @@ urlpatterns = [
     #path('', home, name='home_page'),
     path("accounts/", include("django.contrib.auth.urls")),
     path('', views.MultipleModelView.as_view(template_name='home.html'), name='home'),
-    path('polls/', include('polls.urls')),
     path('var_analysis/', include('var_analysis.urls')),
     path('password_change/', views.change_password, name="change_password"),
 ]

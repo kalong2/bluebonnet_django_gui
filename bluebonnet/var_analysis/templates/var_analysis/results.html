@@ -91,7 +91,7 @@ tr:nth-child(even) {
 {% for query in querys %}
                         {% load static %}
 
-			<tr><td width="10" style="text-align:center"><a href="/var_analysis/results/{{query.latest_evidence}}"><img src="{% static "bluebonnet/media/go_link.png" %}" width="20" height="20"</a></td>
+			<tr><td width="10" style="text-align:center"><a href="/var_analysis/results/{{query.latest_evidence}}"><img src="{% static "bluebonnet/media/go_link.png" %}" width="20" height="20"></a></td>
 				<td>{{ query.id }}</td>
 				<td><a href="/var_analysis/results/{{query.gene}}">{{ query.gene }}</td>
 				<td>{{ query.var }}</td>
