@@ -38,7 +38,7 @@ tr:nth-child(even) {
 
             $(document).ready(function() {
                 $("#resultsTable").fancyTable({
-		sortColumn:4,
+		sortColumn:3,
 			sortOrder: 'descending',
 		/* Setting pagination or enabling */
                    pagination: true,
@@ -70,10 +70,10 @@ tr:nth-child(even) {
 
 <br><br>
 <div>
-	 <table id="resultsTable" class="table table-striped" style="width:80%">
+	 <table id="resultsTable" class="table table-striped" style="width:90%">
 		<thead>
 		<tr>
-			<th>View Results</th>
+			<!--<th>View Results</th>-->
 			<th>Query ID</th>
 			<th>Gene</th>
 			<th>Variant</th>
@@ -91,8 +91,8 @@ tr:nth-child(even) {
 {% for query in querys %}
                         {% load static %}
 
-			<tr><td width="10" style="text-align:center"><a href="/var_analysis/results/{{query.latest_evidence}}"><img src="{% static "bluebonnet/media/go_link.png" %}" width="20" height="20"></a></td>
-				<td>{{ query.id }}</td>
+			<tr><!--<td style="text-align:center"><a href="/var_analysis/results/{{query.latest_evidence}}"><img src="{% static "bluebonnet/media/go_link.png" %}" width="20" height="20"></a></td>-->
+				<td><a href="/var_analysis/results/{{query.latest_evidence}}">{{ query.id }}</td>
 				<td><a href="/var_analysis/results/{{query.gene}}">{{ query.gene }}</td>
 				<td>{{ query.var }}</td>
 				<td>{{ query.date_updated }}</td>

@@ -42,5 +42,6 @@ Evidence.objects.filter(id = evi_id).update(condition = sys.argv[2],
     pubmed = sys.argv[23],
     google = sys.argv[24],
     pubsearch = sys.argv[25],
+    norm_var = sys.argv[26],
 )
 Query.objects.filter(query_str = sys.argv[1]).update(running="")

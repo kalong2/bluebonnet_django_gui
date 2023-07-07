@@ -40,8 +40,8 @@ class Query(models.Model):
         query_str_check.first().analysis()
 
     def analysis(self,*args,**kwargs):
-        date_folder = "/work/NBS/outputs/" + str(self.date_updated) + "/"
-        query_prefix = str(self.gene) + "_" + str(self.id) + "_" + str(self.user_updated) + "_" + str(self.date_updated)
+        date_folder = "/work/NBS/outputs/" + str(self.date_updated).split()[0] + "/"
+        query_prefix = str(self.gene) + "_" + str(self.id) + "_" + str(self.user_updated) + "_" + str(self.date_updated).split()[0]
         input_file = "/work/NBS/inputs/" + query_prefix + ".txt"
         latest_out = "/work/NBS/outputs/latest/" + str(self.gene) + "_" + str(self.id) + "_latest.txt"
         latest_log = "/work/NBS/outputs/latest/" + str(self.gene) + "_" + str(self.id) + "_latest.log"
@@ -59,6 +59,7 @@ class Query(models.Model):
 
 class Evidence(models.Model):
     query_str = models.ForeignKey(Query, on_delete=models.CASCADE)
+    norm_var = models.CharField(max_length=50, default = "N/A", null=True, blank=True)
     condition = models.CharField(max_length=50, default='')
     hgvsp = models.CharField(max_length=50, default='', editable=True)
     chrom = models.CharField(max_length=50, default='')
@@ -87,14 +88,14 @@ class Evidence(models.Model):
     pubsearch = models.CharField(max_length=10000, default='')
 
     reviewer_1 = models.ForeignKey(User,on_delete=models.DO_NOTHING,related_name='first_reviewer', verbose_name="First Reviewer", blank=True,null=True)  
-    reviewer_1_patho = models.CharField(max_length=100, default='', blank=True,null=True)
-    reviewer_1_evidence = models.CharField(max_length=100, default='', blank=True,null=True) 
+    reviewer_1_patho = models.TextField(max_length=10000, default='', blank=True,null=True)
+    reviewer_1_evidence = models.TextField(max_length=10000, default='', blank=True,null=True) 
     reviewer_2 = models.ForeignKey(User,on_delete=models.DO_NOTHING,related_name='second_reviewer', verbose_name="Second Reviewer", blank=True,null=True)  
-    reviewer_2_patho = models.CharField(max_length=100, default='', blank=True,null=True)
-    reviewer_2_evidence = models.CharField(max_length=100, default='', blank=True,null=True)
+    reviewer_2_patho = models.TextField(max_length=10000, default='', blank=True,null=True)
+    reviewer_2_evidence = models.TextField(max_length=10000, default='', blank=True,null=True)
     reviewer_3 = models.ForeignKey(User,on_delete=models.DO_NOTHING,related_name='third_reviewer', verbose_name="Third Reviewer", blank=True,null=True)  
-    reviewer_3_patho = models.CharField(max_length=100, default='', blank=True,null=True)
-    reviewer_3_evidence = models.CharField(max_length=100, default='', blank=True,null=True)
+    reviewer_3_patho = models.TextField(max_length=10000, default='', blank=True,null=True)
+    reviewer_3_evidence = models.TextField(max_length=10000, default='', blank=True,null=True)
 
     
     gnomad_evidence_category_1 = models.CharField(max_length=50, default='', blank=True,null=True)

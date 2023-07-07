@@ -94,7 +94,7 @@ height:170px;
 }
 #id_dbsnp_comment {
 width:100%;
-height:170px;
+height:240px;
 }
 #id_clinvar_comment {
 width:100%;
@@ -116,6 +116,31 @@ height:170px;
 width:100%;
 height:170px;
 }
+#id_reviewer_1_patho {
+width:90%;
+height:100px;
+}
+#id_reviewer_2_patho {
+width:90%;
+height:100px;
+}
+#id_reviewer_3_patho {
+width:90%;
+height:100px;
+}
+#id_reviewer_1_evidence {
+width:90%;
+height:100px;
+}
+#id_reviewer_2_evidence {
+width:90%;
+height:100px;
+}
+#id_reviewer_3_evidence {
+width:90%;
+height:100px;
+}
+
 .column {
 float: left;
 width: 25%;
@@ -154,7 +179,8 @@ max-width: 80%
 <div class="float-child-left-top">
 
         <p><b><u>Overview:</b></u><table id="resultsTable" class="table table-striped" style="width:99%;display:inline-table;margin-right:10px">
-                <tr><th>Protein Change</th><td><pre>{{ evidence.hgvsp }}</pre></td></tr>
+                <tr><th>Normalized Format</th><td><pre>{{ evidence.norm_var }}</pre></td></tr>
+		<tr><th>Protein Change</th><td><pre>{{ evidence.hgvsp }}</pre></td></tr>
 		<tr><th>Chromosome</th><td><pre>{{ evidence.chrom }}</pre></td></tr>
 		<tr><th>Positions</th><td><pre>{{ evidence.start_end }}</pre></td></tr>
 		<tr><th>Date Updated</th><td><pre>{{ evidence.date_ran }}</pre></td></tr>
@@ -197,7 +223,7 @@ max-width: 80%
 </div>
 
 {% load static %}
-<div style="margin-top:10%"></div>   
+<div style="margin-top:30%"></div>   
 <div class="float-container" style="margin-top:10%">
 
 <div class="float-child-left">

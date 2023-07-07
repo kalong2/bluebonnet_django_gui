@@ -35,7 +35,7 @@ def run(request):
                     var = cd.get('var')
                     now = datetime.now()
                     date_fmt = now.strftime("%d%b%Y")
-                    today = datetime.now(pytz.timezone('US/Central')).strftime('%Y-%m-%d')
+                    today = datetime.now(pytz.timezone('US/Central')).strftime('%Y-%m-%d %H:%M:%S')
             #file_prefix = gene + "_" + str(request.user) + "_" + date_fmt
             #print(file_prefix)
             #outfile = open("/home/klong/blah.txt", 'w')

@@ -39,7 +39,8 @@ entry = Evidence(
     clinvar_acc = "tmp",
     pubmed = "tmp",
     google = "tmp",
-    pubsearch = "tmp"
+    pubsearch = "tmp",
+    norm_var = "tmp"
 )
 entry.save()
 this_query = Query.objects.get(query_str = name)
